@@ -1,4 +1,4 @@
-
+//try ask
 package test2;
 //from m
 
