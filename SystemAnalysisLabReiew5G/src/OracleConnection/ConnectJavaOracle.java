@@ -32,7 +32,7 @@ public class ConnectJavaOracle {
 			// Set driver name:
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			// home url:
-			String url = "jdbc:oracle:thin:@localhost:1521:XM";
+			String url = "jdbc:oracle:thin:@localhost:1521:XE";
 			// school url:
 			// String url = "jdbc:oracle:thin:@ E10818:1521:orcl";
 

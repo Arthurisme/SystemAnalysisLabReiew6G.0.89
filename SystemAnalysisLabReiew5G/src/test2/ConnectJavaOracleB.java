@@ -7,7 +7,7 @@ import java.sql.*;
 public class ConnectJavaOracleB
 {
 
-    public static void main(String[] args)  
+    public static void main(String[] args) throws ClassNotFoundException, SQLException 
     {
     	// Connect to oracle here:
     			//home:
@@ -31,7 +31,7 @@ public class ConnectJavaOracleB
                 //  String url = "jdbc:oracle:thin:@ E10818:1521:orcl";
                   
                // home url:
-      			String url = "jdbc:oracle:thin:@127.0.01:1521:XM";
+      			String url = "jdbc:oracle:thin:@localhost:1521:XE";
       			// school url:
       			// String url = "jdbc:oracle:thin:@ E10818:1521:orcl";
       			
@@ -58,6 +58,8 @@ public class ConnectJavaOracleB
             c.commit ();
             c.setAutoCommit(true);
             c.close ();
+            
+            System.out.println (" ******** Success ********");
         }
         catch (Exception e)
         {
