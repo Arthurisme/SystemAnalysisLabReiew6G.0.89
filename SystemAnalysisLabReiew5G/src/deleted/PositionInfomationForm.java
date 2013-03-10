@@ -1,4 +1,4 @@
-package SystemAnalysisLabReview5;
+package deleted;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -13,6 +13,10 @@ import java.awt.Dimension;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
+
+import SystemAnalysisLabReview5.Position;
+
+
 import java.awt.Font;
 import java.io.BufferedWriter;
 import java.io.FileNotFoundException;

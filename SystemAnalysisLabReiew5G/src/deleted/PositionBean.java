@@ -1,4 +1,4 @@
-package SystemAnalysisLabReview5;
+package deleted;
 
 public class PositionBean {
 	private int PositionId;

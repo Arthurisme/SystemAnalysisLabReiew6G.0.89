@@ -1,4 +1,4 @@
-package SystemAnalysisLabReview5;
+package deleted;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -7,6 +7,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Scanner;
 import java.math.BigDecimal;
+
+import SystemAnalysisLabReview5.Position;
 
 public class PositionReadintoArray {
 
