@@ -29,7 +29,7 @@ import java.awt.event.FocusEvent;
  *
  * @author ContEd Student
  */
-public class PayRollSystem extends JFrame implements
+public class PayRollSystem_Main_Run extends JFrame implements
         ActionListener{
 
     /**
@@ -61,7 +61,7 @@ public class PayRollSystem extends JFrame implements
     private String sql="",temp;
     private JMenuItem mntmNewMenuItem;
 
-    public PayRollSystem(){
+    public PayRollSystem_Main_Run(){
 //        double d5=19.00;
 //        System.out.println(String.format("%.2f",d5));
 //        BigDecimal a = new BigDecimal(19.5001);
@@ -302,7 +302,7 @@ public class PayRollSystem extends JFrame implements
     public static void main(String[] args) {
         // TODO code application logic here
 
-        PayRollSystem dia1=new PayRollSystem();
+        PayRollSystem_Main_Run dia1=new PayRollSystem_Main_Run();
        // dia1.setVisible(true);
         
     }
