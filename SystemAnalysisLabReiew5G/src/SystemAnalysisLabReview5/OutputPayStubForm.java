@@ -224,6 +224,10 @@ public class OutputPayStubForm extends JFrame implements
       getContentPane().add(CalcFromDatebaseB);
       
       btnOutputpaystub = new JButton("outputPaystub");
+      btnOutputpaystub.addActionListener(new ActionListener() {
+      	public void actionPerformed(ActionEvent e) {
+      	}
+      });
       btnOutputpaystub.setBounds(155, 492, 109, 41);
       getContentPane().add(btnOutputpaystub);
 
