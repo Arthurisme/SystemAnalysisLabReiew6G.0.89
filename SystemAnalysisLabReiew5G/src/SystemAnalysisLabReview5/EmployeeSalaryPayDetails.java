@@ -96,7 +96,7 @@ public class EmployeeSalaryPayDetails {
         this.Total_income=this.Hourly_rate*this.Number_workedHour;
     }
 
-    public void CalculateNetIncome(){
+    public void CalculateNetIncome(){//read and insert into database
         this.CalculateTotalIncome();
         this.CalculateDeductions();
         this.Net_income=this.Total_income-this.Deductions;

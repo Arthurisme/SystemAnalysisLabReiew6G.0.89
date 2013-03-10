@@ -31,7 +31,7 @@ import java.awt.event.MouseEvent;
  *
  * @author ContEd Student
  */
-public class PayRollSystem_Main_Run extends JFrame implements
+public class OutputPayStubForm extends JFrame implements
         ActionListener{
 
     /**
@@ -51,9 +51,6 @@ public class PayRollSystem_Main_Run extends JFrame implements
 
     private JMenuBar menuMB =
             new JMenuBar(); //create the menu bar
-    private JMenu InputDataM, OutputDataM;
-    private JMenuItem EmployeeI, DepartmentI, PositionI, QualificationI, ItemsPayI;
-    private JMenuItem OutputPayStubI, ListAllEmployeePayStubI;
     EmployeeSalaryPayDetails salary=new EmployeeSalaryPayDetails();
 
     java.text.DecimalFormat decimal2Places_format=new java.text.DecimalFormat("0.00");
@@ -61,10 +58,9 @@ public class PayRollSystem_Main_Run extends JFrame implements
     private static final int WIDTH =600;
     private static final int HEIGHT = 600;
     private String sql="",temp;
-    private JMenuItem mntmNewMenuItem;
-    private JMenuItem mntmOutputpaystubA;
+    private JButton btnOutputpaystub;
 
-    public PayRollSystem_Main_Run(){
+    public OutputPayStubForm(){
 //        double d5=19.00;
 //        System.out.println(String.format("%.2f",d5));
 //        BigDecimal a = new BigDecimal(19.5001);
@@ -137,13 +133,13 @@ public class PayRollSystem_Main_Run extends JFrame implements
 
              //Create Calculate Button
         calculateB = new JButton("Calculate");
-        calculateB.setBounds(0, 492, 140, 41);
+        calculateB.setBounds(0, 492, 22, 41);
         calculateHandler = new calculateButtonHandler();
         calculateB.addActionListener(calculateHandler);
 
              //Create Exit Button
         exitB = new JButton("Exit");
-        exitB.setBounds(292, 492, 292, 41);
+        exitB.setBounds(292, 492, 195, 41);
         ebHandler = new ExitButtonHandler();
         exitB.addActionListener(ebHandler);
 
@@ -224,13 +220,17 @@ public class PayRollSystem_Main_Run extends JFrame implements
       		
       	}
       });
-      CalcFromDatebaseB.setBounds(152, 492, 140, 41);
+      CalcFromDatebaseB.setBounds(32, 492, 92, 41);
       getContentPane().add(CalcFromDatebaseB);
+      
+      btnOutputpaystub = new JButton("outputPaystub");
+      btnOutputpaystub.setBounds(155, 492, 109, 41);
+      getContentPane().add(btnOutputpaystub);
 
              //Set the size of the window and display it
-      setSize(WIDTH, HEIGHT);
+      setSize(513, 600);
       setVisible(true);
-      setDefaultCloseOperation(EXIT_ON_CLOSE);
+      setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
     }
 
@@ -291,52 +291,9 @@ public class PayRollSystem_Main_Run extends JFrame implements
     }
 
     private void setInputDataMenu() {
-        InputDataM = new JMenu("InputData");
-        menuMB.add(InputDataM);
-        EmployeeI = new JMenuItem("Employee");
-        InputDataM.add(EmployeeI);
-        EmployeeI.addActionListener(this);
-
-        DepartmentI = new JMenuItem("Department");
-        InputDataM.add(DepartmentI);
-        DepartmentI.addActionListener(this);
-        PositionI = new JMenuItem("Position");
-        InputDataM.add(PositionI);
-        PositionI.addActionListener(this);
-
-        QualificationI = new JMenuItem("Qualification");
-        InputDataM.add(QualificationI);
-        QualificationI.addActionListener(this);
-
-        ItemsPayI = new JMenuItem("Items Pay");
-        InputDataM.add(ItemsPayI);
-        ItemsPayI.addActionListener(this);
     }
 
-    private void setOutputDataMenu() {// private JMenuItem OutputPayStubI, ListAllEmployeePayStubI;
-        OutputDataM = new JMenu("OutputData");
-        menuMB.add(OutputDataM);
-        OutputPayStubI = new JMenuItem("OutputPayStub");
-        OutputDataM.add(OutputPayStubI);
-        OutputPayStubI.addActionListener(this);
-        
-        mntmNewMenuItem = new JMenuItem("ListAllEmployees");
-        OutputDataM.add(mntmNewMenuItem);
-        
-        mntmOutputpaystubA = new JMenuItem("OutputPayStub A");
-        mntmOutputpaystubA.addMouseListener(new MouseAdapter() {
-        	@Override
-        	public void mousePressed(MouseEvent e) {
-        		//outputPay Stub here:
-        		OutputPayStubForm theOutputPayStubForm=new OutputPayStubForm();
-        		theOutputPayStubForm.setVisible(true);
-        		
-        	}
-        });
-        OutputDataM.add(mntmOutputpaystubA);
-        ListAllEmployeePayStubI = new JMenuItem("ListAllEmployeePayStub");
-        OutputDataM.add(ListAllEmployeePayStubI);
-        ListAllEmployeePayStubI.addActionListener(this);
+    private void setOutputDataMenu() {
 
     }
 
@@ -383,13 +340,13 @@ public class PayRollSystem_Main_Run extends JFrame implements
        }
    }
 
-    public static void main(String[] args) {
+/*    public static void main(String[] args) {
         // TODO code application logic here
 
-        PayRollSystem_Main_Run dia1=new PayRollSystem_Main_Run();
+        OutputPayStubForm dia1=new OutputPayStubForm();
        // dia1.setVisible(true);
         
-    }
+    }*/
     
     public void getEmployeeInfo(){
     	try{
