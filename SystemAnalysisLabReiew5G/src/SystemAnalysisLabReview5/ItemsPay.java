@@ -5,6 +5,7 @@ public class ItemsPay {
 	private int ItemPay_No;
 	private String ItemPay_Title;
 	private double ItemPay_DeductionPer;
+	private double ItemPay_amount;
 	 
 
 	// for future using:
@@ -63,6 +64,13 @@ public class ItemsPay {
 		ItemPay_DeductionPer = ItemPay_DeductionPer_set;
 	}
 	 
+	public void setItemPay_amount(double itemPay_amount){
+		this.ItemPay_amount=itemPay_amount;
+	}
+
+	public double getItemPay_amount(){
+		return this.ItemPay_amount;
+	}
 	
 	public String ItemPayToString( ) {
 		

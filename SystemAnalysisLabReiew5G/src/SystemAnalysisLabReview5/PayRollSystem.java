@@ -178,9 +178,9 @@ public class PayRollSystem extends JFrame implements
                     "===========================================================\n",
                     "OutputPayStub", JOptionPane.PLAIN_MESSAGE);*/
         	temp="===========================================================\n";
-        	ArrayList<ItemBean> deductionList=salary.getDeductionList();
+        	ArrayList<ItemsPay> deductionList=salary.getDeductionList();
         	for(int i=0;i<deductionList.size();i++){
-        		temp=temp+"|      "+deductionList.get(i).getItemPay_title()+" is "
+        		temp=temp+"|      "+deductionList.get(i).get_ItemPay_Title()+" is "
         				+decimal2Places_format.format(deductionList.get(i).getItemPay_amount()) + "$|\n";
         	}
         	temp=temp+"|      The Total deduction is " + decimal2Places_format.format(salary.get_TotalDeduction()) + "$|\n";
@@ -263,18 +263,18 @@ public class PayRollSystem extends JFrame implements
          
 
          try{
-            //create a instance of EmployeeInfoBean
-        	EmployeeInfoBean employeeInfoBean1=new EmployeeInfoBean();
-        	employeeInfoBean1.setEmp_id(Integer.parseInt(EmployeeIdTF.getText().trim()));
-        	employeeInfoBean1.setEmp_fname(EmployeeFirstNameTF.getText());
-        	employeeInfoBean1.setEmp_lname(EmployeeLastNameTF.getText());
-        	employeeInfoBean1.setEmp_Ssn(EmployeeSSNTF.getText());
-        	employeeInfoBean1.setEmp_position(Integer.parseInt(EmployeePositionIdTF.getText()));
-        	employeeInfoBean1.setEmp_QualId(Integer.parseInt(EmployeeQualificationIdTF.getText()));
-        	employeeInfoBean1.setD_id(Integer.parseInt(EmployeeDepartmentIdTF.getText()));
-        	employeeInfoBean1.setEmp_hireDate(EmployeeHireDateTF.getText());
+            //create a instance of Employee
+        	Employee Employee1=new Employee();
+        	Employee1.set_Employee_id(Integer.parseInt(EmployeeIdTF.getText().trim()));
+        	Employee1.set_Employee_Fname(EmployeeFirstNameTF.getText());
+        	Employee1.set_Employee_Lname(EmployeeLastNameTF.getText());
+        	Employee1.Set_SSN(EmployeeSSNTF.getText());
+        	Employee1.set_Position_id(Integer.parseInt(EmployeePositionIdTF.getText()));
+        	Employee1.set_Qual_id_of_Employee(Integer.parseInt(EmployeeQualificationIdTF.getText()));
+        	Employee1.set_Dep_id_of_Employee(Integer.parseInt(EmployeeDepartmentIdTF.getText()));
+        	Employee1.set_HireDate(EmployeeHireDateTF.getText());
         	
-            salary.set_EmployeeInfo(employeeInfoBean1);
+            salary.set_EmployeeInfo(Employee1);
             salary.set_HourlyRate(Double.parseDouble(HourlyRateTF.getText()));
             salary.set_NumberWorkedHour(Double.parseDouble(NumberWorkedHourTF.getText()));
             salary.CalculateNetIncome();
@@ -315,18 +315,18 @@ public class PayRollSystem extends JFrame implements
     			sql="";
     			sql="select * from EmployeeInfo where emp_id="+Integer.parseInt(EmployeeIdTF.getText());
     			EmployeeAction eA1=new EmployeeAction();
-    			EmployeeInfoBean searchResult=new EmployeeInfoBean();
+    			Employee searchResult=new Employee();
     			searchResult=eA1.search(sql);
     			if(searchResult==null){
     				EmployeeIdTF.setText("");
     			}else{
-    				EmployeeFirstNameTF.setText(searchResult.getEmp_fname());
-        			EmployeeHireDateTF.setText(searchResult.getEmp_hireDate());
-        			EmployeeLastNameTF.setText(searchResult.getEmp_lname());
-        			EmployeeSSNTF.setText(searchResult.getEmp_Ssn());
-        			EmployeePositionIdTF.setText(""+searchResult.getEmp_position());
-        			EmployeeQualificationIdTF.setText(""+searchResult.getEmp_QualId());
-        			EmployeeDepartmentIdTF.setText(""+searchResult.getD_id());
+    				EmployeeFirstNameTF.setText(searchResult.get_Employee_Fname());
+        			EmployeeHireDateTF.setText(searchResult.get_HireDate());
+        			EmployeeLastNameTF.setText(searchResult.get_Employee_Lname());
+        			EmployeeSSNTF.setText(searchResult.get_SSN());
+        			EmployeePositionIdTF.setText(""+searchResult.get_Position_id());
+        			EmployeeQualificationIdTF.setText(""+searchResult.get_Qual_id_of_Employee());
+        			EmployeeDepartmentIdTF.setText(""+searchResult.get_Dep_id_of_Employee());
     			}
     			
     		}
