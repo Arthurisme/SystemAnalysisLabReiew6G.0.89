@@ -6,7 +6,12 @@ public class JavaOracleCRUD_E019 {
 
 	public static void main(String[] args) throws ClassNotFoundException,
 			SQLException {
-		connecttoOracle("scott", "tiger");
+
+		// Connect to oracle here:
+		// home:
+		connecttoOracle("system", "liuliu");
+		// school:
+		// connecttoOracle("scott", "tiger");
 	}
 
 	public static void connecttoOracle(String username, String password) {
@@ -19,7 +24,17 @@ public class JavaOracleCRUD_E019 {
 
 			System.out.println(" * Loading the driver *");
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			String url = "jdbc:oracle:thin:@ localhost:1521:orcl";
+			//set url of oracle database:
+            //  String url = "jdbc:oracle:thin:@ E10818:1521:orcl";
+            
+           // home url:
+               String url = "jdbc:oracle:thin:@192.168.12.2:1521:XE";
+        //or:
+  			//String url = "jdbc:oracle:thin:@localhost:1521:XE";
+  			// school url:
+  			 //String url = "jdbc:oracle:thin:@localhost:1521:orcl";
+			
+			//
 			c = DriverManager.getConnection(url, username, password);
 
 			c.setAutoCommit(true);
@@ -42,19 +57,17 @@ public class JavaOracleCRUD_E019 {
 			query = query + "values";
 			query = query + "(1, 'Robertson', 'Myra') ";
 			s.executeUpdate(query);
-			String query2=" INSERT INTO faculty  (f_id, f_last, f_first )  values (2, 'Robertson2', 'Myra2')";
+			String query2 = " INSERT INTO faculty  (f_id, f_last, f_first )  values (2, 'Robertson2', 'Myra2')";
 			s.executeUpdate(query2);
 
 			// Begin testing more:
 			ResultSet rs = s.executeQuery(" select f_id,f_last from faculty");
-            rs.next();
+			rs.next();
 			System.out.println(rs.getInt(1));
 			System.out.println(rs.getString(2));
 			rs.next();
 			System.out.println(rs.getInt(1));
-			//try more than one row of database:
-			
-			
+			// try more than one row of database:
 
 			// end testing more:
 			c.commit();

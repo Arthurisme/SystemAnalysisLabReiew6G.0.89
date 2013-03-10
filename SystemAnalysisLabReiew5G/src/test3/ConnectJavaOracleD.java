@@ -11,9 +11,9 @@ public class ConnectJavaOracleD
     {
     	// Connect to oracle here:
     			//home:
-    					// connecttoOracle("system", "liuliu");
+    					  connecttoOracle("system", "liuliu");
     			//school:
-    			connecttoOracle("scott", "tiger");
+    			//  connecttoOracle("scott", "tiger");
     }
 
     public static void connecttoOracle (String username, String password)
@@ -31,9 +31,11 @@ public class ConnectJavaOracleD
                 //  String url = "jdbc:oracle:thin:@ E10818:1521:orcl";
                   
                // home url:
+                   String url = "jdbc:oracle:thin:@192.168.12.2:1521:XE";
+            //or:
       			//String url = "jdbc:oracle:thin:@localhost:1521:XE";
       			// school url:
-      			 String url = "jdbc:oracle:thin:@localhost:1521:orcl";
+      			 //String url = "jdbc:oracle:thin:@localhost:1521:orcl";
       			
                   c = DriverManager.getConnection(url, username, password);
 
