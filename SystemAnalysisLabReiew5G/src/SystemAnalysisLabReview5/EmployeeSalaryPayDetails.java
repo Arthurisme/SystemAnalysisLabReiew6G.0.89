@@ -18,7 +18,7 @@ import javax.swing.JOptionPane;
  *
  * @author ContEd Student
  */
-public class EmployeeSalary {
+public class EmployeeSalaryPayDetails {
 
     private int Salary_ID;
     private Employee Employee1=new Employee();

@@ -52,7 +52,7 @@ public class PayRollSystem_Main_Run extends JFrame implements
     private JMenu InputDataM, OutputDataM;
     private JMenuItem EmployeeI, DepartmentI, PositionI, QualificationI, ItemsPayI;
     private JMenuItem OutputPayStubI, ListAllEmployeePayStubI;
-    EmployeeSalary salary=new EmployeeSalary();
+    EmployeeSalaryPayDetails salary=new EmployeeSalaryPayDetails();
 
     java.text.DecimalFormat decimal2Places_format=new java.text.DecimalFormat("0.00");
 
@@ -70,20 +70,33 @@ public class PayRollSystem_Main_Run extends JFrame implements
 //        java.text.DecimalFormat myformat=new java.text.DecimalFormat("0.00");
 //        System.out.println("a.setScale(2,2)=" + myformat.format(t1));
     	EmployeeIdL = new JLabel("Enter Employee's ID: ",SwingConstants.RIGHT);
+    	EmployeeIdL.setBounds(0, 0, 292, 41);
     	EmployeeFirstNameL = new JLabel("Enter Employee's First Name: ",SwingConstants.RIGHT);
+    	EmployeeFirstNameL.setBounds(0, 41, 292, 41);
     	EmployeeLastNameL = new JLabel("Enter Employee's Last Name: ",SwingConstants.RIGHT);
+    	EmployeeLastNameL.setBounds(0, 82, 292, 41);
         EmployeeSSNL = new JLabel("Enter Employee's SSN: ",SwingConstants.RIGHT);
+        EmployeeSSNL.setBounds(0, 123, 292, 41);
         EmployeePositionIdL= new JLabel("Enter Employee's Position ID: ",SwingConstants.RIGHT);
+        EmployeePositionIdL.setBounds(0, 164, 292, 41);
         EmployeeQualificationIdL= new JLabel("Enter Employee's Qualification Id: ",SwingConstants.RIGHT);
+        EmployeeQualificationIdL.setBounds(0, 205, 292, 41);
         EmployeeDepartmentIdL= new JLabel("Enter Employee's Department ID: ",SwingConstants.RIGHT);
+        EmployeeDepartmentIdL.setBounds(0, 246, 292, 41);
         EmployeeHireDateL=new JLabel("Enter Employee's Hire Date: ",SwingConstants.RIGHT);
+        EmployeeHireDateL.setBounds(0, 287, 292, 41);
         NumberWorkedHourL = new JLabel("Enter Number of Worked Hour: ",SwingConstants.RIGHT);
+        NumberWorkedHourL.setBounds(0, 328, 292, 41);
         HourlyRateL = new JLabel("Enter the Rate Hour: ",SwingConstants.RIGHT);
+        HourlyRateL.setBounds(0, 369, 292, 41);
         TotalIncomeL = new JLabel("Total Income: ",SwingConstants.RIGHT);
+        TotalIncomeL.setBounds(0, 410, 292, 41);
         NetIncomeL = new JLabel("Net Amount: ",SwingConstants.RIGHT);
+        NetIncomeL.setBounds(0, 451, 292, 41);
         
          //Create the four text fields
         EmployeeIdTF=new JTextField(10);
+        EmployeeIdTF.setBounds(292, 0, 292, 41);
         EmployeeIdTF.addFocusListener(new FocusAdapter() {
         	@Override
         	public void focusLost(FocusEvent arg0) {
@@ -91,16 +104,27 @@ public class PayRollSystem_Main_Run extends JFrame implements
         	}
         });
         EmployeeFirstNameTF = new JTextField(10);
+        EmployeeFirstNameTF.setBounds(292, 41, 292, 41);
         EmployeeLastNameTF = new JTextField(10);
+        EmployeeLastNameTF.setBounds(292, 82, 292, 41);
         EmployeeSSNTF = new JTextField(10);
+        EmployeeSSNTF.setBounds(292, 123, 292, 41);
         EmployeePositionIdTF= new JTextField(10);
+        EmployeePositionIdTF.setBounds(292, 164, 292, 41);
         EmployeeQualificationIdTF= new JTextField(10);
+        EmployeeQualificationIdTF.setBounds(292, 205, 292, 41);
         EmployeeDepartmentIdTF= new JTextField(10);
+        EmployeeDepartmentIdTF.setBounds(292, 246, 292, 41);
         EmployeeHireDateTF=new JTextField(10);
+        EmployeeHireDateTF.setBounds(292, 287, 292, 41);
         NumberWorkedHourTF = new JTextField(10);
+        NumberWorkedHourTF.setBounds(292, 328, 292, 41);
         HourlyRateTF = new JTextField(10);
+        HourlyRateTF.setBounds(292, 369, 292, 41);
         TotalIncomeTF = new JTextField(10);
+        TotalIncomeTF.setBounds(292, 410, 292, 41);
         NetIncomeTF = new JTextField(10);
+        NetIncomeTF.setBounds(292, 451, 292, 41);
 
        
         setJMenuBar(menuMB);
@@ -110,11 +134,13 @@ public class PayRollSystem_Main_Run extends JFrame implements
 
              //Create Calculate Button
         calculateB = new JButton("Calculate");
+        calculateB.setBounds(0, 492, 140, 41);
         calculateHandler = new calculateButtonHandler();
         calculateB.addActionListener(calculateHandler);
 
              //Create Exit Button
         exitB = new JButton("Exit");
+        exitB.setBounds(292, 492, 292, 41);
         ebHandler = new ExitButtonHandler();
         exitB.addActionListener(ebHandler);
 
@@ -123,9 +149,7 @@ public class PayRollSystem_Main_Run extends JFrame implements
 
                  //Get the container
         Container pane = getContentPane();
-
-                 //Set the layout
-        pane.setLayout(new GridLayout(13, 2));
+      getContentPane().setLayout(null);
 
              //Place the components in the pane
       pane.add(EmployeeIdL);
@@ -154,6 +178,48 @@ public class PayRollSystem_Main_Run extends JFrame implements
       pane.add(NetIncomeTF);
       pane.add(calculateB);
       pane.add(exitB);
+      
+      JButton CalcFromDatebaseB = new JButton("Calculate");
+      CalcFromDatebaseB.addActionListener(new ActionListener() {
+      	public void actionPerformed(ActionEvent e) {
+      		
+      		//This is calculator form database:
+
+            
+
+            try{
+               //create a instance of Employee
+           	Employee Employee1b=new Employee();
+           	Employee1b.set_Employee_id(Integer.parseInt(EmployeeIdTF.getText().trim()));
+           	Employee1b.set_Employee_Fname(EmployeeFirstNameTF.getText());
+           	Employee1b.set_Employee_Lname(EmployeeLastNameTF.getText());
+           	Employee1b.Set_SSN(EmployeeSSNTF.getText());
+           	Employee1b.set_Position_id(Integer.parseInt(EmployeePositionIdTF.getText()));
+           	Employee1b.set_Qual_id_of_Employee(Integer.parseInt(EmployeeQualificationIdTF.getText()));
+           	Employee1b.set_Dep_id_of_Employee(Integer.parseInt(EmployeeDepartmentIdTF.getText()));
+           	Employee1b.set_HireDate(EmployeeHireDateTF.getText());
+           	
+               salary.set_EmployeeInfo(Employee1b);
+               salary.set_HourlyRate(Double.parseDouble(HourlyRateTF.getText()));
+               salary.set_NumberWorkedHour(Double.parseDouble(NumberWorkedHourTF.getText()));
+               salary.CalculateNetIncome();// database written.
+               TotalIncomeTF.setText(""+salary.get_TotalIncome()+"$");
+               NetIncomeTF.setText(""+salary.get_NetIncome()+"$");
+               
+               
+            }catch(NumberFormatException e1){
+                System.out.println("You input the wrong data!");
+            }
+            
+            
+            
+         //end calculator
+      		
+      		
+      	}
+      });
+      CalcFromDatebaseB.setBounds(152, 492, 140, 41);
+      getContentPane().add(CalcFromDatebaseB);
 
              //Set the size of the window and display it
       setSize(WIDTH, HEIGHT);
@@ -334,5 +400,4 @@ public class PayRollSystem_Main_Run extends JFrame implements
     		
     	}
     }
-
 }
