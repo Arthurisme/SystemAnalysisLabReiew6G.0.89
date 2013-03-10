@@ -1,5 +1,5 @@
 //try 3 f
-package test3;
+package ConnectToOracle_Handin;
 //from m
 
 import java.sql.*;
