@@ -191,27 +191,27 @@ public class EmployeeForm extends JFrame {
 	public void addEmployeeInfo(){
 		//System.out.println("add");
 		try{
-		EmployeeInfoBean employeeInfoBean1=new EmployeeInfoBean();
-		employeeInfoBean1.setEmp_id(Integer.parseInt(ID_textField.getText()));
-		employeeInfoBean1.setEmp_fname(FN_textField.getText().trim());
-		employeeInfoBean1.setEmp_lname(LN_textField.getText().trim());
-		employeeInfoBean1.setEmp_Ssn(SSN_textField.getText().trim());
-		employeeInfoBean1.setEmp_position(Integer.parseInt(Position_textField.getText()));
-		employeeInfoBean1.setEmp_hireDate(HR_textField.getText());
-		employeeInfoBean1.setEmp_QualId(Integer.parseInt(Qa_textField.getText()));
-		employeeInfoBean1.setD_id(Integer.parseInt(DepartID_textField.getText()));
+		Employee Employee1=new Employee();
+		Employee1.set_Employee_id(Integer.parseInt(ID_textField.getText()));
+		Employee1.set_Employee_Fname(FN_textField.getText().trim());
+		Employee1.set_Employee_Lname(LN_textField.getText().trim());
+		Employee1.Set_SSN(SSN_textField.getText().trim());
+		Employee1.set_Position_id(Integer.parseInt(Position_textField.getText()));
+		Employee1.set_HireDate(HR_textField.getText());
+		Employee1.set_Qual_id_of_Employee(Integer.parseInt(Qa_textField.getText()));
+		Employee1.set_Dep_id_of_Employee(Integer.parseInt(DepartID_textField.getText()));
 		
 		
 		
 		
-		EmployeeInfoBeanAction eA1=new EmployeeInfoBeanAction();
+		EmployeeAction eA1=new EmployeeAction();
 		sql="insert into EmployeeInfo values ("+Integer.parseInt(ID_textField.getText())+",'"+FN_textField.getText()
 				+"','"+LN_textField.getText()+"','"+SSN_textField.getText()+"',"+Integer.parseInt(Position_textField.getText())
 				+",to_date('"+HR_textField.getText()+"','DD-MM-YYYY'),"+Integer.parseInt(Qa_textField.getText())+","
 				+Integer.parseInt(DepartID_textField.getText())+")";
 		
 		//System.out.println("newSql="+sql);
-		eA1.insert(sql,employeeInfoBean1);
+		eA1.insert(sql,Employee1);
 		}catch(Exception e){
 			JOptionPane.showMessageDialog(null,"Please fill all the fields!","Message", JOptionPane.PLAIN_MESSAGE);
 		}
@@ -225,29 +225,29 @@ public class EmployeeForm extends JFrame {
 		}else{
 			sql="";
 			sql="select * from EmployeeInfo where emp_id="+Integer.parseInt(ID_textField.getText());
-			EmployeeInfoBeanAction eA1=new EmployeeInfoBeanAction();
-			EmployeeInfoBean searchResult=new EmployeeInfoBean();
+			EmployeeAction eA1=new EmployeeAction();
+			Employee searchResult=new Employee();
 			searchResult=eA1.search(sql);
-			FN_textField.setText(searchResult.getEmp_fname());
-			HR_textField.setText(searchResult.getEmp_hireDate());
-			LN_textField.setText(searchResult.getEmp_lname());
-			SSN_textField.setText(searchResult.getEmp_Ssn());
-			Position_textField.setText(""+searchResult.getEmp_position());
-			Qa_textField.setText(""+searchResult.getEmp_QualId());
-			DepartID_textField.setText(""+searchResult.getD_id());
+			FN_textField.setText(searchResult.get_Employee_Fname());
+			HR_textField.setText(searchResult.get_HireDate());
+			LN_textField.setText(searchResult.get_Employee_Lname());
+			SSN_textField.setText(searchResult.get_SSN());
+			Position_textField.setText(""+searchResult.get_Position_id());
+			Qa_textField.setText(""+searchResult.get_Qual_id_of_Employee());
+			DepartID_textField.setText(""+searchResult.get_Dep_id_of_Employee());
 		}
 	}
 	
 	public void deleteEmployeeInfo(){
 		try{
-			EmployeeInfoBean employeeInfoBean1=new EmployeeInfoBean();
-			employeeInfoBean1.setEmp_id(Integer.parseInt(ID_textField.getText()));
+			Employee Employee1=new Employee();
+			Employee1.set_Employee_id(Integer.parseInt(ID_textField.getText()));
 			
-			EmployeeInfoBeanAction eA1=new EmployeeInfoBeanAction();
+			EmployeeAction eA1=new EmployeeAction();
 			sql="delete EmployeeInfo where emp_id="+Integer.parseInt(ID_textField.getText());
 			
 			//System.out.println("newSql="+sql);
-			eA1.delete(sql, employeeInfoBean1);
+			eA1.delete(sql, Employee1);
 			
 			
 		}catch(Exception e){
@@ -258,20 +258,20 @@ public class EmployeeForm extends JFrame {
 	public void updateEmployeeInfo(){
 		//System.out.println("add");
 		try{
-		EmployeeInfoBean employeeInfoBean1=new EmployeeInfoBean();
-		employeeInfoBean1.setEmp_id(Integer.parseInt(ID_textField.getText()));
-		employeeInfoBean1.setEmp_fname(FN_textField.getText().trim());
-		employeeInfoBean1.setEmp_lname(LN_textField.getText().trim());
-		employeeInfoBean1.setEmp_Ssn(SSN_textField.getText().trim());
-		employeeInfoBean1.setEmp_position(Integer.parseInt(Position_textField.getText()));
-		employeeInfoBean1.setEmp_hireDate(HR_textField.getText());
-		employeeInfoBean1.setEmp_QualId(Integer.parseInt(Qa_textField.getText()));
-		employeeInfoBean1.setD_id(Integer.parseInt(DepartID_textField.getText()));
+		Employee Employee1=new Employee();
+		Employee1.set_Employee_id(Integer.parseInt(ID_textField.getText()));
+		Employee1.set_Employee_Fname(FN_textField.getText().trim());
+		Employee1.set_Employee_Lname(LN_textField.getText().trim());
+		Employee1.Set_SSN(SSN_textField.getText().trim());
+		Employee1.set_Position_id(Integer.parseInt(Position_textField.getText()));
+		Employee1.set_HireDate(HR_textField.getText());
+		Employee1.set_Qual_id_of_Employee(Integer.parseInt(Qa_textField.getText()));
+		Employee1.set_Dep_id_of_Employee(Integer.parseInt(DepartID_textField.getText()));
 		
 		
 		
 		
-		EmployeeInfoBeanAction eA1=new EmployeeInfoBeanAction();
+		EmployeeAction eA1=new EmployeeAction();
 		sql="update EmployeeInfo set emp_fname='"+FN_textField.getText()+"',emp_lname='"+LN_textField.getText()
 				+"',emp_Ssn='"+SSN_textField.getText()+"',emp_position="+Integer.parseInt(Position_textField.getText())
 				+",emp_hireDate=to_date('"+HR_textField.getText()+"','DD-MM-YYYY'),emp_QualId="+Integer.parseInt(Qa_textField.getText())
@@ -279,7 +279,7 @@ public class EmployeeForm extends JFrame {
 
 		
 		//System.out.println("newSql="+sql);
-		eA1.update(sql, employeeInfoBean1);
+		eA1.update(sql, Employee1);
 		}catch(Exception e){
 			JOptionPane.showMessageDialog(null,"Please fill all the fields!","Message", JOptionPane.PLAIN_MESSAGE);
 		}

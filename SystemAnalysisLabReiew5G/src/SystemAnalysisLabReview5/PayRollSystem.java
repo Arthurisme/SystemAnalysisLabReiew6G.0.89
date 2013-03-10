@@ -314,7 +314,7 @@ public class PayRollSystem extends JFrame implements
     		}else{
     			sql="";
     			sql="select * from EmployeeInfo where emp_id="+Integer.parseInt(EmployeeIdTF.getText());
-    			EmployeeInfoBeanAction eA1=new EmployeeInfoBeanAction();
+    			EmployeeAction eA1=new EmployeeAction();
     			EmployeeInfoBean searchResult=new EmployeeInfoBean();
     			searchResult=eA1.search(sql);
     			if(searchResult==null){

@@ -7,7 +7,7 @@ import java.text.SimpleDateFormat;
 
 import javax.swing.JOptionPane;
 
-public class EmployeeInfoBeanAction {
+public class EmployeeAction {
 	private Statement sm = null;
 	private ResultSet rs = null;
 	private Connection ct = null;
@@ -16,11 +16,11 @@ public class EmployeeInfoBeanAction {
 	private boolean dataValid=true;
 	private DateFormat dateFormat;
 	
-	public void insert(String sql,EmployeeInfoBean employeeInfoBean1){
+	public void insert(String sql,Employee Employee1){
 		//validation of data(5 steps)
 		dataValid=true;
 		//1.check the EmployeeId exist or not(correct result:not exist)
-		temp_sql="select * from EmployeeInfo where emp_id="+employeeInfoBean1.getEmp_id();
+		temp_sql="select * from EmployeeInfo where emp_id="+Employee1.get_Employee_id();
 		ConnectionDB connectionDB=new ConnectionDB();
 		
 		if(connectionDB.search(temp_sql)>0){
@@ -29,7 +29,7 @@ public class EmployeeInfoBeanAction {
 		}		
 		
 		//2.check the Position id exist or not(correct result:exist)
-		temp_sql="select * from Position where PositionId="+employeeInfoBean1.getEmp_position();
+		temp_sql="select * from Position where PositionId="+Employee1.get_Position_id();
 		connectionDB=new ConnectionDB();
 		
 		if(connectionDB.search(temp_sql)==0){
@@ -38,7 +38,7 @@ public class EmployeeInfoBeanAction {
 		}
 		
 		//3.check the Qualification id exist or not(correct result:exist)
-		temp_sql="select * from Qualification where QualId="+employeeInfoBean1.getEmp_QualId();
+		temp_sql="select * from Qualification where QualId="+Employee1.get_Qual_id_of_Employee();
 		connectionDB=new ConnectionDB();
 		
 		if(connectionDB.search(temp_sql)==0){
@@ -46,7 +46,7 @@ public class EmployeeInfoBeanAction {
 			JOptionPane.showMessageDialog(null,"Qualification Id does not exist!","Message", JOptionPane.PLAIN_MESSAGE);
 		}
 		//4.check the Department Id exist or not(correct result:exist)
-		temp_sql="select * from Department where d_id="+employeeInfoBean1.getD_id();
+		temp_sql="select * from Department where d_id="+Employee1.get_Dep_id_of_Employee();
 		connectionDB=new ConnectionDB();
 		
 		if(connectionDB.search(temp_sql)==0){
@@ -57,7 +57,7 @@ public class EmployeeInfoBeanAction {
 		try{
 			
 			dateFormat= new SimpleDateFormat("dd-MM-yyyy",Locale.ENGLISH);
-			dateFormat.parse(employeeInfoBean1.getEmp_hireDate());
+			dateFormat.parse(Employee1.get_HireDate());
 		}catch(Exception e){
 			dataValid=false;
 			JOptionPane.showMessageDialog(null,"The format of HireDate is not correct!","Message", JOptionPane.PLAIN_MESSAGE);
@@ -73,8 +73,8 @@ public class EmployeeInfoBeanAction {
 	
 	
 	
-	public EmployeeInfoBean search(String sql){
-		EmployeeInfoBean eI1=new EmployeeInfoBean();
+	public Employee search(String sql){
+		Employee eI1=new Employee();
 		try {
 			
 			ct = new ConnectionDB().getConn();
@@ -91,17 +91,17 @@ public class EmployeeInfoBeanAction {
             if (rs.next()) {
 				
 				rowCount =rs.getRow();
-				eI1.setEmp_id(rs.getInt(1));
-				eI1.setEmp_fname(rs.getString(2));
-				eI1.setEmp_lname(rs.getString(3));
-				eI1.setEmp_Ssn(rs.getString(4));
-				eI1.setEmp_position(rs.getInt(5));
+				eI1.set_Employee_id(rs.getInt(1));
+				eI1.set_Employee_Fname(rs.getString(2));
+				eI1.set_Employee_Lname(rs.getString(3));
+				eI1.Set_SSN(rs.getString(4));
+				eI1.set_Position_id(rs.getInt(5));
 				//System.out.println(rs.getDate(6).toGMTString());
 				dateFormat= new SimpleDateFormat("dd-MM-yyyy",Locale.ENGLISH);				
 				String dateString= dateFormat.format(rs.getDate(6));
-				eI1.setEmp_hireDate(dateString);
-				eI1.setEmp_QualId(rs.getInt(7));
-				eI1.setD_id(rs.getInt(8));
+				eI1.set_HireDate(dateString);
+				eI1.set_Qual_id_of_Employee(rs.getInt(7));
+				eI1.set_Dep_id_of_Employee(rs.getInt(8));
 				
 				
 				
@@ -125,11 +125,11 @@ public class EmployeeInfoBeanAction {
 		
 	}
 	
-	public void delete(String sql,EmployeeInfoBean employeeInfoBean1){
+	public void delete(String sql,Employee Employee1){
 		//validation of data(5 steps)
 		dataValid=true;
 		//1.check the EmployeeId exist or not(correct result:exist)
-		temp_sql="select * from EmployeeInfo where emp_id="+employeeInfoBean1.getEmp_id();
+		temp_sql="select * from EmployeeInfo where emp_id="+Employee1.get_Employee_id();
 		ConnectionDB connectionDB=new ConnectionDB();
 		
 		if(connectionDB.search(temp_sql)==0){
@@ -145,11 +145,11 @@ public class EmployeeInfoBeanAction {
 		}
 	}
 	
-	public void update(String sql,EmployeeInfoBean employeeInfoBean1){
+	public void update(String sql,Employee Employee1){
 		//validation of data(5 steps)
 		dataValid=true;
 		//1.check the EmployeeId exist or not(correct result: exist)
-		temp_sql="select * from EmployeeInfo where emp_id="+employeeInfoBean1.getEmp_id();
+		temp_sql="select * from EmployeeInfo where emp_id="+Employee1.get_Employee_id();
 		ConnectionDB connectionDB=new ConnectionDB();
 		
 		if(connectionDB.search(temp_sql)<1){
@@ -159,7 +159,7 @@ public class EmployeeInfoBeanAction {
 		}		
 		
 		//2.check the Position id exist or not(correct result:exist)
-		temp_sql="select * from Position where PositionId="+employeeInfoBean1.getEmp_position();
+		temp_sql="select * from Position where PositionId="+Employee1.get_Position_id();
 		connectionDB=new ConnectionDB();
 		
 		if(connectionDB.search(temp_sql)==0){
@@ -168,7 +168,7 @@ public class EmployeeInfoBeanAction {
 		}
 		
 		//3.check the Qualification id exist or not(correct result:exist)
-		temp_sql="select * from Qualification where QualId="+employeeInfoBean1.getEmp_QualId();
+		temp_sql="select * from Qualification where QualId="+Employee1.get_Qual_id_of_Employee();
 		connectionDB=new ConnectionDB();
 		
 		if(connectionDB.search(temp_sql)==0){
@@ -176,7 +176,7 @@ public class EmployeeInfoBeanAction {
 			JOptionPane.showMessageDialog(null,"Qualification Id does not exist!","Message", JOptionPane.PLAIN_MESSAGE);
 		}
 		//4.check the Department Id exist or not(correct result:exist)
-		temp_sql="select * from Department where d_id="+employeeInfoBean1.getD_id();
+		temp_sql="select * from Department where d_id="+Employee1.get_Dep_id_of_Employee();
 		connectionDB=new ConnectionDB();
 		
 		if(connectionDB.search(temp_sql)==0){
@@ -187,7 +187,7 @@ public class EmployeeInfoBeanAction {
 		try{
 			
 			dateFormat= new SimpleDateFormat("dd-MM-yyyy",Locale.ENGLISH);
-			dateFormat.parse(employeeInfoBean1.getEmp_hireDate());
+			dateFormat.parse(Employee1.get_HireDate());
 		}catch(Exception e){
 			dataValid=false;
 			JOptionPane.showMessageDialog(null,"The format of HireDate is not correct!","Message", JOptionPane.PLAIN_MESSAGE);
