@@ -10,6 +10,8 @@ import java.awt.Container;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 
@@ -321,6 +323,28 @@ public class PayRollSystem_Main_Run extends JFrame implements
         OutputPayStubI.addActionListener(this);
         
         mntmNewMenuItem = new JMenuItem("ListAllEmployees");
+        mntmNewMenuItem.addMouseListener(new MouseAdapter() {
+        	@Override
+        	public void mousePressed(MouseEvent e) {
+        		//begin list all employee:
+        		
+        		ListAllEmployeePayStub theListAllEmployeePayStub;
+				try {
+					theListAllEmployeePayStub = new ListAllEmployeePayStub();
+					theListAllEmployeePayStub.setVisible(true);
+				} catch (FileNotFoundException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+        		
+        		
+        		
+        		//end all list everyone
+        	}
+        });
         OutputDataM.add(mntmNewMenuItem);
         
         mntmOutputpaystubA = new JMenuItem("OutputPayStub A");
