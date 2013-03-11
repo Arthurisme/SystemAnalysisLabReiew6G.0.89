@@ -22,8 +22,8 @@ public class ytuclosee extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					// frame = new ytuclosee();
-					//frame.setVisible(true);
+					  frame = new ytuclosee();
+					  frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -35,8 +35,8 @@ public class ytuclosee extends JFrame {
 	 * Create the frame.
 	 */
 	public ytuclosee() {
-		 //frame = new ytuclosee();
-			//frame.setVisible(true);
+		 // frame = new ytuclosee();
+			//  frame.setVisible(true);
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -49,7 +49,8 @@ public class ytuclosee extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				frame.setVisible(false);
+				.setVisible(false);
+				
 			}
 		});
 		contentPane.add(btnNewButton, BorderLayout.SOUTH);

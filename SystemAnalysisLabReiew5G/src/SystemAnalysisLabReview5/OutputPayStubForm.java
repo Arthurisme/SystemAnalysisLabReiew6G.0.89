@@ -37,8 +37,6 @@ public class OutputPayStubForm extends JFrame implements
     /**
      * @param args the command line arguments
      */
-	
-	private static OutputPayStubForm theDia1Output;
     private JLabel EmployeeIdL,EmployeeLastNameL,EmployeeFirstNameL, EmployeeSSNL, NumberWorkedHourL, HourlyRateL, TotalIncomeL, NetIncomeL
     				,EmployeePositionIdL,EmployeeQualificationIdL,EmployeeDepartmentIdL,EmployeeHireDateL;
     
@@ -46,10 +44,10 @@ public class OutputPayStubForm extends JFrame implements
     private JTextField EmployeeLastNameTF,EmployeeFirstNameTF,EmployeeSSNTF,NumberWorkedHourTF,HourlyRateTF,TotalIncomeTF,NetIncomeTF,EmployeeIdTF
     				,EmployeePositionIdTF,EmployeeQualificationIdTF,EmployeeDepartmentIdTF,EmployeeHireDateTF;
 
-    private JButton calculateB, exitB;
+    private JButton calculateB;
 
     private calculateButtonHandler calculateHandler;
-    private ExitButtonHandler ebHandler;
+    
 
     private JMenuBar menuMB =
             new JMenuBar(); //create the menu bar
@@ -139,12 +137,6 @@ public class OutputPayStubForm extends JFrame implements
         calculateHandler = new calculateButtonHandler();
         calculateB.addActionListener(calculateHandler);
 
-             //Create Exit Button
-        exitB = new JButton("Exit");
-        exitB.setBounds(292, 492, 195, 41);
-        ebHandler = new ExitButtonHandler();
-        exitB.addActionListener(ebHandler);
-
              //Set the title of the window
         setTitle("Pay Roll Application");
 
@@ -179,7 +171,6 @@ public class OutputPayStubForm extends JFrame implements
       pane.add(NetIncomeL);
       pane.add(NetIncomeTF);
       pane.add(calculateB);
-      pane.add(exitB);
       
       JButton CalcFromDatebaseB = new JButton("Calculate");
       CalcFromDatebaseB.addActionListener(new ActionListener() {
@@ -339,25 +330,11 @@ public class OutputPayStubForm extends JFrame implements
       }
    }
 
-   private class ExitButtonHandler implements ActionListener
-   {
-        public void actionPerformed(ActionEvent e)
-       {
-           //System.exit(0);
-    	   setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-  	  //heListAllEmployeePayStub.
-    	   theDia1Output.setVisible(false);
-    	   
-    	   
-    	    
-       }
-   }
-
     public static void main(String[] args) {
         // TODO code application logic here
 
-          theDia1Output=new OutputPayStubForm();
-        theDia1Output.setVisible(true);
+        OutputPayStubForm dia1=new OutputPayStubForm();
+        dia1.setVisible(true);
         
     }
     

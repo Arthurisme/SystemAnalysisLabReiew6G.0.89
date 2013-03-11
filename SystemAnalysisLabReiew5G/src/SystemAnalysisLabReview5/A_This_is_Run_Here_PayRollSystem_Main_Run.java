@@ -33,7 +33,7 @@ import java.awt.event.MouseEvent;
  *
  * @author ContEd Student
  */
-public class PayRollSystem_Main_Run extends JFrame implements
+public class A_This_is_Run_Here_PayRollSystem_Main_Run extends JFrame implements
         ActionListener{
 
     /**
@@ -55,7 +55,6 @@ public class PayRollSystem_Main_Run extends JFrame implements
             new JMenuBar(); //create the menu bar
     private JMenu InputDataM, OutputDataM;
     private JMenuItem EmployeeI, DepartmentI, PositionI, QualificationI, ItemsPayI;
-    private JMenuItem OutputPayStubI, ListAllEmployeePayStubI;
     EmployeeSalaryPayDetails salary=new EmployeeSalaryPayDetails();
 
     java.text.DecimalFormat decimal2Places_format=new java.text.DecimalFormat("0.00");
@@ -63,11 +62,10 @@ public class PayRollSystem_Main_Run extends JFrame implements
     private static final int WIDTH =600;
     private static final int HEIGHT = 600;
     private String sql="",temp;
-    private JMenuItem mntmNewMenuItem;
     private JMenuItem mntmOutputpaystubA;
     private JMenuItem mntmListallemployeepaystubA;
 
-    public PayRollSystem_Main_Run(){
+    public A_This_is_Run_Here_PayRollSystem_Main_Run(){
 //        double d5=19.00;
 //        System.out.println(String.format("%.2f",d5));
 //        BigDecimal a = new BigDecimal(19.5001);
@@ -319,34 +317,6 @@ public class PayRollSystem_Main_Run extends JFrame implements
     private void setOutputDataMenu() {// private JMenuItem OutputPayStubI, ListAllEmployeePayStubI;
         OutputDataM = new JMenu("OutputData");
         menuMB.add(OutputDataM);
-        OutputPayStubI = new JMenuItem("OutputPayStub");
-        OutputDataM.add(OutputPayStubI);
-        OutputPayStubI.addActionListener(this);
-        
-        mntmNewMenuItem = new JMenuItem("ListAllEmployees");
-        mntmNewMenuItem.addMouseListener(new MouseAdapter() {
-        	@Override
-        	public void mousePressed(MouseEvent e) {
-        		//begin list all employee:
-        		
-        		ListAllEmployeePayStub theListAllEmployeePayStub;
-				try {
-					theListAllEmployeePayStub = new ListAllEmployeePayStub();
-					theListAllEmployeePayStub.setVisible(true);
-				} catch (FileNotFoundException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				} catch (IOException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
-        		
-        		
-        		
-        		//end all list everyone
-        	}
-        });
-        OutputDataM.add(mntmNewMenuItem);
         
         mntmOutputpaystubA = new JMenuItem("OutputPayStub A");
         mntmOutputpaystubA.addMouseListener(new MouseAdapter() {
@@ -354,13 +324,11 @@ public class PayRollSystem_Main_Run extends JFrame implements
         	public void mousePressed(MouseEvent e) {
         		//outputPay Stub here:
         		OutputPayStubForm theOutputPayStubForm=new OutputPayStubForm();
-        		theOutputPayStubForm.setVisible(true);
+        		 theOutputPayStubForm.setVisible(true);
         		
         	}
         });
         OutputDataM.add(mntmOutputpaystubA);
-        ListAllEmployeePayStubI = new JMenuItem("ListAllEmployeePayStub");
-        OutputDataM.add(ListAllEmployeePayStubI);
         
         mntmListallemployeepaystubA = new JMenuItem("ListAllEmployeePayStub A");
         mntmListallemployeepaystubA.addMouseListener(new MouseAdapter() {
@@ -386,7 +354,6 @@ public class PayRollSystem_Main_Run extends JFrame implements
         	}
         });
         OutputDataM.add(mntmListallemployeepaystubA);
-        ListAllEmployeePayStubI.addActionListener(this);
 
     }
 
@@ -436,7 +403,7 @@ public class PayRollSystem_Main_Run extends JFrame implements
     public static void main(String[] args) {
         // TODO code application logic here
 
-        PayRollSystem_Main_Run dia1=new PayRollSystem_Main_Run();
+        A_This_is_Run_Here_PayRollSystem_Main_Run dia1=new A_This_is_Run_Here_PayRollSystem_Main_Run();
        // dia1.setVisible(true);
         
     }

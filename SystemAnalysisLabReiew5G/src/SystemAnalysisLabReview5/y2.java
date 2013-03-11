@@ -46,8 +46,8 @@ public class y2 extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				
 				
-				//ytuclosee nt=new ytuclosee();
-				//nt.setVisible(false);
+				 ytuclosee nt=new ytuclosee();
+				 nt.setVisible(true);
 			}
 		});
 		contentPane.add(btnNewButton, BorderLayout.WEST);
