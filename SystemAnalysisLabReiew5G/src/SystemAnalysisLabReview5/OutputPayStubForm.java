@@ -148,6 +148,7 @@ public class OutputPayStubForm extends JFrame implements
 
                  //Get the container
         Container pane = getContentPane();
+        
       getContentPane().setLayout(null);
 
              //Place the components in the pane
@@ -340,7 +341,11 @@ public class OutputPayStubForm extends JFrame implements
    {
        public void actionPerformed(ActionEvent e)
        {
-           System.exit(0);
+           //System.exit(0);
+    	   setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    	   
+    	   
+    	    
        }
    }
 

@@ -33,11 +33,11 @@ public class ListAllEmployeePayStub extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					ListAllEmployeePayStub frame = new ListAllEmployeePayStub();
-					frame.setVisible(true);
+					 ListAllEmployeePayStub frame = new ListAllEmployeePayStub();
+					 frame.setVisible(true);
 					
 					//home:
-					connecttoOracle("system", "liuliu");
+					//connecttoOracle("system", "liuliu");
 					//school:
 					//connecttoOracle("scott", "tiger");
 				} catch (Exception e) {
@@ -89,6 +89,8 @@ public class ListAllEmployeePayStub extends JFrame {
 		
 		//textArea.read(new FileReader("EmpPayDetail.out"), null);
 		//textArea.append(testTexarea);
+		
+		connecttoOracle("system", "liuliu");
 		
 	}
 	

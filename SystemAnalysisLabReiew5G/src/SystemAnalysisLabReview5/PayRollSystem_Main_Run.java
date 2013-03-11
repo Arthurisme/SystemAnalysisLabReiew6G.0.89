@@ -65,6 +65,7 @@ public class PayRollSystem_Main_Run extends JFrame implements
     private String sql="",temp;
     private JMenuItem mntmNewMenuItem;
     private JMenuItem mntmOutputpaystubA;
+    private JMenuItem mntmListallemployeepaystubA;
 
     public PayRollSystem_Main_Run(){
 //        double d5=19.00;
@@ -360,6 +361,31 @@ public class PayRollSystem_Main_Run extends JFrame implements
         OutputDataM.add(mntmOutputpaystubA);
         ListAllEmployeePayStubI = new JMenuItem("ListAllEmployeePayStub");
         OutputDataM.add(ListAllEmployeePayStubI);
+        
+        mntmListallemployeepaystubA = new JMenuItem("ListAllEmployeePayStub A");
+        mntmListallemployeepaystubA.addMouseListener(new MouseAdapter() {
+        	@Override
+        	public void mousePressed(MouseEvent e) {
+        		//alll list begin:
+        		
+        		;
+				try {
+					ListAllEmployeePayStub theListAllEmployeePayStub = new ListAllEmployeePayStub();
+				
+	        		theListAllEmployeePayStub.setVisible(true);
+
+				} catch (FileNotFoundException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+        		
+        		//all list end
+        	}
+        });
+        OutputDataM.add(mntmListallemployeepaystubA);
         ListAllEmployeePayStubI.addActionListener(this);
 
     }
