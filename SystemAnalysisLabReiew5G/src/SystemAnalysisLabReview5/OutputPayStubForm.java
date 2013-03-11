@@ -37,6 +37,8 @@ public class OutputPayStubForm extends JFrame implements
     /**
      * @param args the command line arguments
      */
+	
+	private static OutputPayStubForm theDia1Output;
     private JLabel EmployeeIdL,EmployeeLastNameL,EmployeeFirstNameL, EmployeeSSNL, NumberWorkedHourL, HourlyRateL, TotalIncomeL, NetIncomeL
     				,EmployeePositionIdL,EmployeeQualificationIdL,EmployeeDepartmentIdL,EmployeeHireDateL;
     
@@ -339,11 +341,12 @@ public class OutputPayStubForm extends JFrame implements
 
    private class ExitButtonHandler implements ActionListener
    {
-       public void actionPerformed(ActionEvent e)
+        public void actionPerformed(ActionEvent e)
        {
            //System.exit(0);
     	   setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
   	  //heListAllEmployeePayStub.
+    	   theDia1Output.setVisible(false);
     	   
     	   
     	    
@@ -353,8 +356,8 @@ public class OutputPayStubForm extends JFrame implements
     public static void main(String[] args) {
         // TODO code application logic here
 
-        OutputPayStubForm dia1=new OutputPayStubForm();
-        dia1.setVisible(true);
+          theDia1Output=new OutputPayStubForm();
+        theDia1Output.setVisible(true);
         
     }
     
