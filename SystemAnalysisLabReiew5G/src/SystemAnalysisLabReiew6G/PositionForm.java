@@ -1,4 +1,4 @@
-package SystemAnalysisLabReview5;
+package SystemAnalysisLabReiew6G;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
@@ -42,18 +42,18 @@ public class PositionForm extends JFrame {
 	public PositionForm() {
 		setTitle("Postion Information");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 680, 300);
+		setBounds(100, 100, 680, 177);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JLabel lblPositionId = new JLabel("Position Id:");
-		lblPositionId.setBounds(49, 28, 93, 14);
+		lblPositionId.setBounds(166, 41, 93, 14);
 		contentPane.add(lblPositionId);
 		
 		JLabel lblPositionDescription = new JLabel("Position Description:");
-		lblPositionDescription.setBounds(10, 53, 146, 14);
+		lblPositionDescription.setBounds(127, 66, 146, 14);
 		contentPane.add(lblPositionDescription);
 		
 		JButton AddPosition_button = new JButton("Add Position");
@@ -62,17 +62,17 @@ public class PositionForm extends JFrame {
 				addPosition();
 			}
 		});
-		AddPosition_button.setBounds(10, 94, 117, 23);
+		AddPosition_button.setBounds(10, 113, 117, 23);
 		contentPane.add(AddPosition_button);
 		
 		PositionDesc_textField = new JTextField();
 		PositionDesc_textField.setColumns(10);
-		PositionDesc_textField.setBounds(152, 50, 371, 20);
+		PositionDesc_textField.setBounds(269, 63, 122, 20);
 		contentPane.add(PositionDesc_textField);
 		
 		PositionId_textField = new JTextField();
 		PositionId_textField.setColumns(10);
-		PositionId_textField.setBounds(152, 25, 86, 20);
+		PositionId_textField.setBounds(269, 38, 122, 20);
 		contentPane.add(PositionId_textField);
 		
 		JButton DeletePosition_button = new JButton("Delete Position");
@@ -81,7 +81,7 @@ public class PositionForm extends JFrame {
 				deletePositionInfo();
 			}
 		});
-		DeletePosition_button.setBounds(137, 94, 131, 23);
+		DeletePosition_button.setBounds(137, 113, 131, 23);
 		contentPane.add(DeletePosition_button);
 		
 		JButton SearchPosition_button = new JButton("Search Position");
@@ -90,7 +90,7 @@ public class PositionForm extends JFrame {
 				searchPosition();
 			}
 		});
-		SearchPosition_button.setBounds(278, 94, 146, 23);
+		SearchPosition_button.setBounds(278, 113, 146, 23);
 		contentPane.add(SearchPosition_button);
 		
 		JButton UpdatePosition_button = new JButton("Update Position");
@@ -99,7 +99,7 @@ public class PositionForm extends JFrame {
 				updatePositionInfo();
 			}
 		});
-		UpdatePosition_button.setBounds(451, 94, 146, 23);
+		UpdatePosition_button.setBounds(451, 113, 146, 23);
 		contentPane.add(UpdatePosition_button);
 	}
 	

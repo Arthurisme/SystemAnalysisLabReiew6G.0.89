@@ -14,7 +14,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
-import SystemAnalysisLabReview5.Qualification;
+import SystemAnalysisLabReiew6G.Qualification;
 
 import java.awt.Font;
 import java.io.BufferedWriter;

@@ -8,7 +8,7 @@ import java.io.PrintWriter;
 import java.util.Scanner;
 import java.math.BigDecimal;
 
-import SystemAnalysisLabReview5.Qualification;
+import SystemAnalysisLabReiew6G.Qualification;
 
 public class QualificationReadintoArray {
 

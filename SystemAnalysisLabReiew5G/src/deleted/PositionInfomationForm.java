@@ -14,7 +14,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
-import SystemAnalysisLabReview5.Position;
+import SystemAnalysisLabReiew6G.Position;
 
 
 import java.awt.Font;

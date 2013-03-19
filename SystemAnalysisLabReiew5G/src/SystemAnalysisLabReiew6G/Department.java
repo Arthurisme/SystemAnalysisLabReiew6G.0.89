@@ -1,4 +1,4 @@
-package SystemAnalysisLabReview5;
+package SystemAnalysisLabReiew6G;
 
 public class Department {
 

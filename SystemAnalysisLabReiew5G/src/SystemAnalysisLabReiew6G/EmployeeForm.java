@@ -1,4 +1,4 @@
-package SystemAnalysisLabReview5;
+package SystemAnalysisLabReiew6G;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
@@ -61,75 +61,75 @@ public class EmployeeForm extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel lblEmployeeId = new JLabel("Employee ID:");
-		lblEmployeeId.setBounds(96, 75, 95, 14);
+		lblEmployeeId.setBounds(96, 44, 95, 14);
 		contentPane.add(lblEmployeeId);
 		
 		JLabel lblEnterEmployeesFirst = new JLabel("Enter Employee's First Name:");
-		lblEnterEmployeesFirst.setBounds(18, 100, 191, 14);
+		lblEnterEmployeesFirst.setBounds(18, 69, 191, 14);
 		contentPane.add(lblEnterEmployeesFirst);
 		
 		JLabel lblEnterEmployeesPosition = new JLabel("Enter Employee's Position:");
-		lblEnterEmployeesPosition.setBounds(28, 125, 209, 14);
+		lblEnterEmployeesPosition.setBounds(28, 94, 209, 14);
 		contentPane.add(lblEnterEmployeesPosition);
 		
 		JLabel lblEnterEmployeesQualification = new JLabel("Enter Employee's Qualification:");
-		lblEnterEmployeesQualification.setBounds(10, 150, 207, 14);
+		lblEnterEmployeesQualification.setBounds(10, 119, 207, 14);
 		contentPane.add(lblEnterEmployeesQualification);
 		
 		ID_textField = new JTextField();
-		ID_textField.setBounds(217, 66, 86, 20);
+		ID_textField.setBounds(217, 35, 86, 20);
 		contentPane.add(ID_textField);
 		ID_textField.setColumns(10);
 		
 		FN_textField = new JTextField();
-		FN_textField.setBounds(217, 94, 86, 20);
+		FN_textField.setBounds(217, 63, 86, 20);
 		contentPane.add(FN_textField);
 		FN_textField.setColumns(10);
 		
 		Position_textField = new JTextField();
-		Position_textField.setBounds(217, 119, 86, 20);
+		Position_textField.setBounds(217, 88, 86, 20);
 		contentPane.add(Position_textField);
 		Position_textField.setColumns(10);
 		
 		Qa_textField = new JTextField();
-		Qa_textField.setBounds(217, 144, 86, 20);
+		Qa_textField.setBounds(217, 113, 86, 20);
 		contentPane.add(Qa_textField);
 		Qa_textField.setColumns(10);
 		
 		lblEnterEmployeesName = new JLabel("Enter Employee's Name:");
-		lblEnterEmployeesName.setBounds(357, 75, 176, 14);
+		lblEnterEmployeesName.setBounds(357, 44, 176, 14);
 		contentPane.add(lblEnterEmployeesName);
 		
 		lblEnterEmployeesSin = new JLabel("Enter Employee's SIN:");
-		lblEnterEmployeesSin.setBounds(367, 100, 169, 14);
+		lblEnterEmployeesSin.setBounds(367, 69, 169, 14);
 		contentPane.add(lblEnterEmployeesSin);
 		
 		lblEnterEmployeesHiredate = new JLabel("Enter Employee's HireDate:");
-		lblEnterEmployeesHiredate.setBounds(344, 125, 189, 14);
+		lblEnterEmployeesHiredate.setBounds(344, 94, 189, 14);
 		contentPane.add(lblEnterEmployeesHiredate);
 		
 		lblEnterEmployeesDepartment = new JLabel("Enter Employee's Department ID:");
-		lblEnterEmployeesDepartment.setBounds(313, 150, 204, 14);
+		lblEnterEmployeesDepartment.setBounds(313, 119, 204, 14);
 		contentPane.add(lblEnterEmployeesDepartment);
 		
 		DepartID_textField = new JTextField();
 		DepartID_textField.setColumns(10);
-		DepartID_textField.setBounds(527, 153, 86, 20);
+		DepartID_textField.setBounds(527, 122, 86, 20);
 		contentPane.add(DepartID_textField);
 		
 		HR_textField = new JTextField();
 		HR_textField.setColumns(10);
-		HR_textField.setBounds(527, 128, 86, 20);
+		HR_textField.setBounds(527, 97, 86, 20);
 		contentPane.add(HR_textField);
 		
 		SSN_textField = new JTextField();
 		SSN_textField.setColumns(10);
-		SSN_textField.setBounds(527, 103, 86, 20);
+		SSN_textField.setBounds(527, 72, 86, 20);
 		contentPane.add(SSN_textField);
 		
 		LN_textField = new JTextField();
 		LN_textField.setColumns(10);
-		LN_textField.setBounds(527, 75, 86, 20);
+		LN_textField.setBounds(527, 44, 86, 20);
 		contentPane.add(LN_textField);
 		
 		JButton Add_Button = new JButton("Add Employee");
@@ -182,10 +182,6 @@ public class EmployeeForm extends JFrame {
 		
 		Update_Button.setBounds(476, 175, 137, 23);
 		contentPane.add(Update_Button);
-		
-		JLabel lblNewLabel = new JLabel("DD-MM-YYYY");
-		lblNewLabel.setBounds(623, 132, 77, 14);
-		contentPane.add(lblNewLabel);
 	}
 	
 	public void addEmployeeInfo(){

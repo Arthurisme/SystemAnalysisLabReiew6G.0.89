@@ -1,4 +1,4 @@
-package SystemAnalysisLabReview5;
+package SystemAnalysisLabReiew6G;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
@@ -50,58 +50,58 @@ public class DepartmentForm extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Department ID:");
-		lblNewLabel.setBounds(73, 53, 105, 14);
+		lblNewLabel.setBounds(190, 14, 105, 14);
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Enter Department's Location:");
-		lblNewLabel_1.setBounds(10, 76, 181, 14);
+		lblNewLabel_1.setBounds(128, 76, 181, 14);
 		contentPane.add(lblNewLabel_1);
 		
 		Location_textField = new JTextField();
-		Location_textField.setBounds(181, 73, 128, 20);
+		Location_textField.setBounds(299, 73, 128, 20);
 		contentPane.add(Location_textField);
 		Location_textField.setColumns(10);
 		
 		DepartmentId_textField = new JTextField();
-		DepartmentId_textField.setBounds(181, 50, 86, 20);
+		DepartmentId_textField.setBounds(298, 11, 129, 20);
 		contentPane.add(DepartmentId_textField);
 		DepartmentId_textField.setColumns(10);
 		
-		JLabel lblEnterDepartmentsName = new JLabel("Enter Department's Name:");
-		lblEnterDepartmentsName.setBounds(295, 53, 181, 14);
-		contentPane.add(lblEnterDepartmentsName);
+		JLabel lblDepartmentsName = new JLabel("Enter Department's Name:");
+		lblDepartmentsName.setBounds(141, 42, 181, 14);
+		contentPane.add(lblDepartmentsName);
 		
 		DepartmentName_textField = new JTextField();
-		DepartmentName_textField.setBounds(452, 50, 114, 20);
+		DepartmentName_textField.setBounds(298, 39, 129, 20);
 		contentPane.add(DepartmentName_textField);
 		DepartmentName_textField.setColumns(10);
 		
-		JButton AddDepartment_Button = new JButton("Add Department");
-		AddDepartment_Button.addActionListener(new ActionListener() {
+		JButton Add_Button = new JButton("Add Department");
+		Add_Button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				addDepartment();
 			}
 		});
-		AddDepartment_Button.setBounds(10, 101, 140, 23);
-		contentPane.add(AddDepartment_Button);
+		Add_Button.setBounds(10, 101, 140, 23);
+		contentPane.add(Add_Button);
 		
-		JButton DeleteDepartment_Button = new JButton("Delete Department");
-		DeleteDepartment_Button.addActionListener(new ActionListener() {
+		JButton DeleteDepartmentButton = new JButton("Delete Department");
+		DeleteDepartmentButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				deleteDepartmentInfo();
 			}
 		});
-		DeleteDepartment_Button.setBounds(158, 101, 140, 23);
-		contentPane.add(DeleteDepartment_Button);
+		DeleteDepartmentButton.setBounds(158, 101, 140, 23);
+		contentPane.add(DeleteDepartmentButton);
 		
-		JButton SearchDepartment_Button = new JButton("Search Department");
-		SearchDepartment_Button.addActionListener(new ActionListener() {
+		JButton SearchDepartmentButton = new JButton("Search Department");
+		SearchDepartmentButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				searchDepartment();
 			}
 		});
-		SearchDepartment_Button.setBounds(308, 101, 168, 23);
-		contentPane.add(SearchDepartment_Button);
+		SearchDepartmentButton.setBounds(308, 101, 168, 23);
+		contentPane.add(SearchDepartmentButton);
 		
 		JButton UpdateDepartment_Button = new JButton("Update Department");
 		UpdateDepartment_Button.addActionListener(new ActionListener() {

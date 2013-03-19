@@ -8,7 +8,7 @@ import java.io.PrintWriter;
 import java.util.Scanner;
 import java.math.BigDecimal;
 
-import SystemAnalysisLabReview5.Position;
+import SystemAnalysisLabReiew6G.Position;
 
 public class PositionReadintoArray {
 

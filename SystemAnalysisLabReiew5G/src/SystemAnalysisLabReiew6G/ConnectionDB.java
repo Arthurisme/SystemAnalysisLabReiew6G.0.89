@@ -1,4 +1,4 @@
-package SystemAnalysisLabReview5;
+package SystemAnalysisLabReiew6G;
 import java.sql.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -18,10 +18,8 @@ import org.w3c.dom.NodeList;
 
 public class ConnectionDB {
 	private Connection connection = null;
-	private String JDBCConnector="";
-	private String dbName="";
-	private String dbUser="";
-	private String dbPIN="";
+	 
+ 
 	private Statement sm = null;
 	private ResultSet rs = null;
 	
@@ -49,11 +47,11 @@ public class ConnectionDB {
 	
 
 
-	private static String getValue(String tag, Element element) {
+	/*private static String getValue(String tag, Element element) {
 		NodeList nodes = element.getElementsByTagName(tag).item(0).getChildNodes();
 		Node node = (Node) nodes.item(0);
 		return node.getNodeValue();
-		}
+		}*/
 	
 	public void insert(String sql){
 		try {

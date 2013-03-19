@@ -1,4 +1,4 @@
-package SystemAnalysisLabReview5;
+package SystemAnalysisLabReiew6G;
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -10,8 +10,6 @@ import java.awt.Container;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 
@@ -33,7 +31,7 @@ import java.awt.event.MouseEvent;
  *
  * @author ContEd Student
  */
-public class A_This_is_Run_Here_PayRollSystem_Main_Run extends JFrame implements
+public class OutputPayStubForm extends JFrame implements
         ActionListener{
 
     /**
@@ -46,15 +44,13 @@ public class A_This_is_Run_Here_PayRollSystem_Main_Run extends JFrame implements
     private JTextField EmployeeLastNameTF,EmployeeFirstNameTF,EmployeeSSNTF,NumberWorkedHourTF,HourlyRateTF,TotalIncomeTF,NetIncomeTF,EmployeeIdTF
     				,EmployeePositionIdTF,EmployeeQualificationIdTF,EmployeeDepartmentIdTF,EmployeeHireDateTF;
 
-    private JButton calculateB, exitB;
+    private JButton calculateB;
 
     private calculateButtonHandler calculateHandler;
-    private ExitButtonHandler ebHandler;
+    
 
     private JMenuBar menuMB =
             new JMenuBar(); //create the menu bar
-    private JMenu InputDataM, OutputDataM;
-    private JMenuItem EmployeeI, DepartmentI, PositionI, QualificationI, ItemsPayI;
     EmployeeSalaryPayDetails salary=new EmployeeSalaryPayDetails();
 
     java.text.DecimalFormat decimal2Places_format=new java.text.DecimalFormat("0.00");
@@ -62,10 +58,8 @@ public class A_This_is_Run_Here_PayRollSystem_Main_Run extends JFrame implements
     private static final int WIDTH =600;
     private static final int HEIGHT = 600;
     private String sql="",temp;
-    private JMenuItem mntmOutputpaystubA;
-    private JMenuItem mntmListallemployeepaystubA;
 
-    public A_This_is_Run_Here_PayRollSystem_Main_Run(){
+    public OutputPayStubForm(){
 //        double d5=19.00;
 //        System.out.println(String.format("%.2f",d5));
 //        BigDecimal a = new BigDecimal(19.5001);
@@ -74,33 +68,33 @@ public class A_This_is_Run_Here_PayRollSystem_Main_Run extends JFrame implements
 //        java.text.DecimalFormat myformat=new java.text.DecimalFormat("0.00");
 //        System.out.println("a.setScale(2,2)=" + myformat.format(t1));
     	EmployeeIdL = new JLabel("Enter Employee's ID: ",SwingConstants.RIGHT);
-    	EmployeeIdL.setBounds(0, 0, 292, 41);
+    	EmployeeIdL.setBounds(0, 0, 177, 24);
     	EmployeeFirstNameL = new JLabel("Enter Employee's First Name: ",SwingConstants.RIGHT);
-    	EmployeeFirstNameL.setBounds(0, 41, 292, 41);
+    	EmployeeFirstNameL.setBounds(22, 41, 155, 41);
     	EmployeeLastNameL = new JLabel("Enter Employee's Last Name: ",SwingConstants.RIGHT);
-    	EmployeeLastNameL.setBounds(0, 82, 292, 41);
+    	EmployeeLastNameL.setBounds(22, 82, 155, 41);
         EmployeeSSNL = new JLabel("Enter Employee's SSN: ",SwingConstants.RIGHT);
-        EmployeeSSNL.setBounds(0, 123, 292, 41);
+        EmployeeSSNL.setBounds(22, 123, 155, 41);
         EmployeePositionIdL= new JLabel("Enter Employee's Position ID: ",SwingConstants.RIGHT);
-        EmployeePositionIdL.setBounds(0, 164, 292, 41);
+        EmployeePositionIdL.setBounds(22, 164, 155, 41);
         EmployeeQualificationIdL= new JLabel("Enter Employee's Qualification Id: ",SwingConstants.RIGHT);
-        EmployeeQualificationIdL.setBounds(0, 205, 292, 41);
+        EmployeeQualificationIdL.setBounds(22, 205, 155, 41);
         EmployeeDepartmentIdL= new JLabel("Enter Employee's Department ID: ",SwingConstants.RIGHT);
-        EmployeeDepartmentIdL.setBounds(0, 246, 292, 41);
+        EmployeeDepartmentIdL.setBounds(22, 246, 155, 41);
         EmployeeHireDateL=new JLabel("Enter Employee's Hire Date: ",SwingConstants.RIGHT);
-        EmployeeHireDateL.setBounds(0, 287, 292, 41);
+        EmployeeHireDateL.setBounds(22, 287, 155, 41);
         NumberWorkedHourL = new JLabel("Enter Number of Worked Hour: ",SwingConstants.RIGHT);
-        NumberWorkedHourL.setBounds(0, 328, 292, 41);
+        NumberWorkedHourL.setBounds(22, 328, 155, 41);
         HourlyRateL = new JLabel("Enter the Rate Hour: ",SwingConstants.RIGHT);
-        HourlyRateL.setBounds(0, 369, 292, 41);
+        HourlyRateL.setBounds(22, 369, 155, 41);
         TotalIncomeL = new JLabel("Total Income: ",SwingConstants.RIGHT);
-        TotalIncomeL.setBounds(0, 410, 292, 41);
+        TotalIncomeL.setBounds(22, 410, 155, 41);
         NetIncomeL = new JLabel("Net Amount: ",SwingConstants.RIGHT);
-        NetIncomeL.setBounds(0, 451, 292, 41);
+        NetIncomeL.setBounds(22, 451, 155, 41);
         
          //Create the four text fields
         EmployeeIdTF=new JTextField(10);
-        EmployeeIdTF.setBounds(292, 0, 292, 41);
+        EmployeeIdTF.setBounds(187, 0, 217, 24);
         EmployeeIdTF.addFocusListener(new FocusAdapter() {
         	@Override
         	public void focusLost(FocusEvent arg0) {
@@ -108,27 +102,27 @@ public class A_This_is_Run_Here_PayRollSystem_Main_Run extends JFrame implements
         	}
         });
         EmployeeFirstNameTF = new JTextField(10);
-        EmployeeFirstNameTF.setBounds(292, 41, 292, 41);
+        EmployeeFirstNameTF.setBounds(189, 41, 292, 41);
         EmployeeLastNameTF = new JTextField(10);
-        EmployeeLastNameTF.setBounds(292, 82, 292, 41);
+        EmployeeLastNameTF.setBounds(187, 82, 292, 41);
         EmployeeSSNTF = new JTextField(10);
-        EmployeeSSNTF.setBounds(292, 123, 292, 41);
+        EmployeeSSNTF.setBounds(187, 123, 292, 41);
         EmployeePositionIdTF= new JTextField(10);
-        EmployeePositionIdTF.setBounds(292, 164, 292, 41);
+        EmployeePositionIdTF.setBounds(187, 164, 292, 41);
         EmployeeQualificationIdTF= new JTextField(10);
-        EmployeeQualificationIdTF.setBounds(292, 205, 292, 41);
+        EmployeeQualificationIdTF.setBounds(187, 205, 292, 41);
         EmployeeDepartmentIdTF= new JTextField(10);
-        EmployeeDepartmentIdTF.setBounds(292, 246, 292, 41);
+        EmployeeDepartmentIdTF.setBounds(187, 246, 292, 41);
         EmployeeHireDateTF=new JTextField(10);
-        EmployeeHireDateTF.setBounds(292, 287, 292, 41);
+        EmployeeHireDateTF.setBounds(187, 287, 292, 41);
         NumberWorkedHourTF = new JTextField(10);
-        NumberWorkedHourTF.setBounds(292, 328, 292, 41);
+        NumberWorkedHourTF.setBounds(187, 328, 292, 41);
         HourlyRateTF = new JTextField(10);
-        HourlyRateTF.setBounds(292, 369, 292, 41);
+        HourlyRateTF.setBounds(187, 369, 292, 41);
         TotalIncomeTF = new JTextField(10);
-        TotalIncomeTF.setBounds(292, 410, 292, 41);
+        TotalIncomeTF.setBounds(187, 410, 292, 41);
         NetIncomeTF = new JTextField(10);
-        NetIncomeTF.setBounds(292, 451, 292, 41);
+        NetIncomeTF.setBounds(187, 451, 292, 41);
 
        
         setJMenuBar(menuMB);
@@ -138,15 +132,9 @@ public class A_This_is_Run_Here_PayRollSystem_Main_Run extends JFrame implements
 
              //Create Calculate Button
         calculateB = new JButton("Calculate");
-        calculateB.setBounds(0, 492, 140, 41);
+        calculateB.setBounds(0, 492, 22, 41);
         calculateHandler = new calculateButtonHandler();
         calculateB.addActionListener(calculateHandler);
-
-             //Create Exit Button
-        exitB = new JButton("Exit");
-        exitB.setBounds(292, 492, 292, 41);
-        ebHandler = new ExitButtonHandler();
-        exitB.addActionListener(ebHandler);
 
              //Set the title of the window
         setTitle("Pay Roll Application");
@@ -181,9 +169,9 @@ public class A_This_is_Run_Here_PayRollSystem_Main_Run extends JFrame implements
       pane.add(NetIncomeL);
       pane.add(NetIncomeTF);
       pane.add(calculateB);
-      pane.add(exitB);
       
       JButton CalcFromDatebaseB = new JButton("Calculate");
+      CalcFromDatebaseB.setBounds(32, 492, 449, 41);
       CalcFromDatebaseB.addActionListener(new ActionListener() {
       	public void actionPerformed(ActionEvent e) {
       		
@@ -225,13 +213,12 @@ public class A_This_is_Run_Here_PayRollSystem_Main_Run extends JFrame implements
       		
       	}
       });
-      CalcFromDatebaseB.setBounds(152, 492, 140, 41);
       getContentPane().add(CalcFromDatebaseB);
 
              //Set the size of the window and display it
-      setSize(WIDTH, HEIGHT);
+      setSize(522, 600);
       setVisible(true);
-      setDefaultCloseOperation(EXIT_ON_CLOSE);
+      setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
     }
 
@@ -292,68 +279,9 @@ public class A_This_is_Run_Here_PayRollSystem_Main_Run extends JFrame implements
     }
 
     private void setInputDataMenu() {
-        InputDataM = new JMenu("InputData");
-        menuMB.add(InputDataM);
-        EmployeeI = new JMenuItem("Employee");
-        InputDataM.add(EmployeeI);
-        EmployeeI.addActionListener(this);
-
-        DepartmentI = new JMenuItem("Department");
-        InputDataM.add(DepartmentI);
-        DepartmentI.addActionListener(this);
-        PositionI = new JMenuItem("Position");
-        InputDataM.add(PositionI);
-        PositionI.addActionListener(this);
-
-        QualificationI = new JMenuItem("Qualification");
-        InputDataM.add(QualificationI);
-        QualificationI.addActionListener(this);
-
-        ItemsPayI = new JMenuItem("Items Pay");
-        InputDataM.add(ItemsPayI);
-        ItemsPayI.addActionListener(this);
     }
 
-    private void setOutputDataMenu() {// private JMenuItem OutputPayStubI, ListAllEmployeePayStubI;
-        OutputDataM = new JMenu("OutputData");
-        menuMB.add(OutputDataM);
-        
-        mntmOutputpaystubA = new JMenuItem("OutputPayStub A");
-        mntmOutputpaystubA.addMouseListener(new MouseAdapter() {
-        	@Override
-        	public void mousePressed(MouseEvent e) {
-        		//outputPay Stub here:
-        		OutputPayStubForm theOutputPayStubForm=new OutputPayStubForm();
-        		 theOutputPayStubForm.setVisible(true);
-        		
-        	}
-        });
-        OutputDataM.add(mntmOutputpaystubA);
-        
-        mntmListallemployeepaystubA = new JMenuItem("ListAllEmployeePayStub A");
-        mntmListallemployeepaystubA.addMouseListener(new MouseAdapter() {
-        	@Override
-        	public void mousePressed(MouseEvent e) {
-        		//alll list begin:
-        		
-        		;
-				try {
-					ListAllEmployeePayStub theListAllEmployeePayStub = new ListAllEmployeePayStub();
-				
-	        		theListAllEmployeePayStub.setVisible(true);
-
-				} catch (FileNotFoundException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				} catch (IOException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
-        		
-        		//all list end
-        	}
-        });
-        OutputDataM.add(mntmListallemployeepaystubA);
+    private void setOutputDataMenu() {
 
     }
 
@@ -392,19 +320,11 @@ public class A_This_is_Run_Here_PayRollSystem_Main_Run extends JFrame implements
       }
    }
 
-   private class ExitButtonHandler implements ActionListener
-   {
-       public void actionPerformed(ActionEvent e)
-       {
-           System.exit(0);
-       }
-   }
-
     public static void main(String[] args) {
         // TODO code application logic here
 
-        A_This_is_Run_Here_PayRollSystem_Main_Run dia1=new A_This_is_Run_Here_PayRollSystem_Main_Run();
-       // dia1.setVisible(true);
+        OutputPayStubForm dia1=new OutputPayStubForm();
+        dia1.setVisible(true);
         
     }
     

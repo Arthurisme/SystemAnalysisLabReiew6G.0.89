@@ -1,4 +1,4 @@
-package SystemAnalysisLabReview5;
+package SystemAnalysisLabReiew6G;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
@@ -50,11 +50,11 @@ public class ItemForm extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel lblItempayNo = new JLabel("ItemPay No:");
-		lblItempayNo.setBounds(73, 31, 105, 14);
+		lblItempayNo.setBounds(206, 88, 105, 14);
 		contentPane.add(lblItempayNo);
 		
 		JLabel lblEnterItempayRate = new JLabel("Enter ItemPay Rate:");
-		lblEnterItempayRate.setBounds(35, 54, 125, 14);
+		lblEnterItempayRate.setBounds(168, 170, 125, 14);
 		contentPane.add(lblEnterItempayRate);
 		
 		JButton AddItemPay_Button = new JButton("Add ItemPay");
@@ -63,7 +63,7 @@ public class ItemForm extends JFrame {
 				addItem();
 			}
 		});
-		AddItemPay_Button.setBounds(10, 79, 140, 23);
+		AddItemPay_Button.setBounds(10, 209, 140, 23);
 		contentPane.add(AddItemPay_Button);
 		
 		JButton DeleteItemPay_button = new JButton("Delete  ItemPay");
@@ -72,26 +72,26 @@ public class ItemForm extends JFrame {
 				deleteItemInfo();
 			}
 		});
-		DeleteItemPay_button.setBounds(158, 79, 140, 23);
+		DeleteItemPay_button.setBounds(158, 209, 140, 23);
 		contentPane.add(DeleteItemPay_button);
 		
 		ItemPayRate_textField = new JTextField();
 		ItemPayRate_textField.setColumns(10);
-		ItemPayRate_textField.setBounds(181, 51, 86, 20);
+		ItemPayRate_textField.setBounds(314, 167, 86, 20);
 		contentPane.add(ItemPayRate_textField);
 		
 		ItemPayNo_textField = new JTextField();
 		ItemPayNo_textField.setColumns(10);
-		ItemPayNo_textField.setBounds(181, 28, 86, 20);
+		ItemPayNo_textField.setBounds(314, 85, 86, 20);
 		contentPane.add(ItemPayNo_textField);
 		
 		JLabel lblEnterItempayTitle = new JLabel("Enter ItemPay Title:");
-		lblEnterItempayTitle.setBounds(295, 31, 140, 14);
+		lblEnterItempayTitle.setBounds(179, 129, 140, 14);
 		contentPane.add(lblEnterItempayTitle);
 		
 		ItemPayTitle_textField = new JTextField();
 		ItemPayTitle_textField.setColumns(10);
-		ItemPayTitle_textField.setBounds(431, 28, 224, 20);
+		ItemPayTitle_textField.setBounds(315, 126, 168, 20);
 		contentPane.add(ItemPayTitle_textField);
 		
 		JButton SearchItemPay_Button = new JButton("Search  ItemPay");
@@ -100,7 +100,7 @@ public class ItemForm extends JFrame {
 				searchItem();
 			}
 		});
-		SearchItemPay_Button.setBounds(308, 79, 168, 23);
+		SearchItemPay_Button.setBounds(308, 209, 168, 23);
 		contentPane.add(SearchItemPay_Button);
 		
 		JButton UpdateItemPay_button = new JButton("Update  ItemPay");
@@ -109,7 +109,7 @@ public class ItemForm extends JFrame {
 				updateItemInfo();
 			}
 		});
-		UpdateItemPay_button.setBounds(487, 79, 168, 23);
+		UpdateItemPay_button.setBounds(487, 209, 168, 23);
 		contentPane.add(UpdateItemPay_button);
 	}
 	

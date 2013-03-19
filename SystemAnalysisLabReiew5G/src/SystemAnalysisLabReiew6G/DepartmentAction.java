@@ -1,4 +1,4 @@
-package SystemAnalysisLabReview5;
+package SystemAnalysisLabReiew6G;
 import java.sql.*;
 import java.util.*;
 import java.util.Date;
@@ -14,7 +14,7 @@ public class DepartmentAction {
 	private int rowCount = 0;
 	private String temp_sql="";
 	private boolean dataValid=true;
-	private DateFormat dateFormat;
+ 
 	
 	public void insert(String sql,Department Department1){
 		//validation of data(1 steps)

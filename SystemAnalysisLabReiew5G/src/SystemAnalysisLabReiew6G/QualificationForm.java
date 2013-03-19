@@ -1,4 +1,4 @@
-package SystemAnalysisLabReview5;
+package SystemAnalysisLabReiew6G;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
@@ -42,27 +42,27 @@ public class QualificationForm extends JFrame {
 	public QualificationForm() {
 		setTitle("Qualification Information");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 644, 300);
+		setBounds(100, 100, 644, 219);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JLabel lblQualificationId = new JLabel("Qualification Id:");
-		lblQualificationId.setBounds(49, 52, 93, 14);
+		lblQualificationId.setBounds(197, 57, 93, 14);
 		contentPane.add(lblQualificationId);
 		
 		JLabel lblQualificationDescription = new JLabel("Qualification Description:");
-		lblQualificationDescription.setBounds(10, 77, 146, 14);
+		lblQualificationDescription.setBounds(158, 82, 146, 14);
 		contentPane.add(lblQualificationDescription);
 		
 		QualificationDesc_textField = new JTextField();
-		QualificationDesc_textField.setBounds(166, 74, 371, 20);
+		QualificationDesc_textField.setBounds(314, 79, 192, 20);
 		contentPane.add(QualificationDesc_textField);
 		QualificationDesc_textField.setColumns(10);
 		
 		QualificationId_textField = new JTextField();
-		QualificationId_textField.setBounds(166, 49, 86, 20);
+		QualificationId_textField.setBounds(314, 54, 86, 20);
 		contentPane.add(QualificationId_textField);
 		QualificationId_textField.setColumns(10);
 		
@@ -72,7 +72,7 @@ public class QualificationForm extends JFrame {
 				addQualification();
 			}
 		});
-		AddQualification_Button.setBounds(10, 118, 131, 23);
+		AddQualification_Button.setBounds(10, 150, 131, 23);
 		contentPane.add(AddQualification_Button);
 		
 		JButton DeleteQualification_button = new JButton("Delete Qualification");
@@ -81,7 +81,7 @@ public class QualificationForm extends JFrame {
 				deleteQualificationInfo();
 			}
 		});
-		DeleteQualification_button.setBounds(144, 118, 146, 23);
+		DeleteQualification_button.setBounds(144, 150, 146, 23);
 		contentPane.add(DeleteQualification_button);
 		
 		JButton SearchQualification_button = new JButton("Search Qualification");
@@ -90,7 +90,7 @@ public class QualificationForm extends JFrame {
 				searchQualification();
 			}
 		});
-		SearchQualification_button.setBounds(300, 118, 151, 23);
+		SearchQualification_button.setBounds(300, 150, 151, 23);
 		contentPane.add(SearchQualification_button);
 		
 		JButton Updatequalification_button = new JButton("Update Qualification");
@@ -100,7 +100,7 @@ public class QualificationForm extends JFrame {
 			}
 			
 		});
-		Updatequalification_button.setBounds(461, 118, 165, 23);
+		Updatequalification_button.setBounds(461, 150, 165, 23);
 		contentPane.add(Updatequalification_button);
 	}
 	
