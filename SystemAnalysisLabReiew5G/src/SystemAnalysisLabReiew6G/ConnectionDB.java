@@ -31,7 +31,7 @@ public class ConnectionDB {
 	    	 
             Class.forName ("oracle.jdbc.driver.OracleDriver");
 			connection = DriverManager.getConnection(
-					 "jdbc:oracle:thin:@192.168.12.2:1521:XE", "system", "liuliu");
+					 "jdbc:oracle:thin:@192.168.12.23:1521:XE", "system", "liuliu");
 			connection.setAutoCommit(false);
 		} catch (Exception e) {
  
@@ -47,29 +47,19 @@ public class ConnectionDB {
 	
 
 
-	/*private static String getValue(String tag, Element element) {
-		NodeList nodes = element.getElementsByTagName(tag).item(0).getChildNodes();
-		Node node = (Node) nodes.item(0);
-		return node.getNodeValue();
-		}*/
+	 
 	
 	public void insert(String sql){
 		try {
 			this.getConn();
 			sm = connection.createStatement();
-			//System.out.println("Connection created!");
-			
-			
-			//System.out.println(sql);
-			//System.out.println(sm.getClass());
+			 
 			if(sm.executeUpdate(sql)==1){
 				JOptionPane.showMessageDialog(null,"Insertion Compelted!","Message", JOptionPane.PLAIN_MESSAGE);
 			}
 			
 			connection.commit();
-			
-			//connection.setAutoCommit(true);
-			//System.out.println("insertion completed!");
+			 
 		} catch (Exception e) {
 			try{
 				connection.rollback();
@@ -80,27 +70,20 @@ public class ConnectionDB {
 			JOptionPane.showMessageDialog(null,"Insertion Failed","Message", JOptionPane.PLAIN_MESSAGE);
 		} finally {
 			this.close();
-			//System.out.println("Connection closed!");
-		}
+ 		}
 	}
 	
 	public void insertForSalary(String sql){
 		try {
 			this.getConn();
 			sm = connection.createStatement();
-			//System.out.println("Connection created!");
-			
-			
-			//System.out.println(sql);
-			//System.out.println(sm.getClass());
+			 
 			if(sm.executeUpdate(sql)==1){
-				//JOptionPane.showMessageDialog(null,"Insertion Compelted!","Message", JOptionPane.PLAIN_MESSAGE);
-			}
+ 			}
 			
 			connection.commit();
 			
-			//connection.setAutoCommit(true);
-			//System.out.println("insertion completed!");
+		 
 		} catch (Exception e) {
 			try{
 				connection.rollback();
@@ -108,30 +91,23 @@ public class ConnectionDB {
 				System.out.println("DataBase Error!  Data Insertion!");
 			}
 			e.printStackTrace();
-			//JOptionPane.showMessageDialog(null,"Insertion Failed","Message", JOptionPane.PLAIN_MESSAGE);
-		} finally {
+ 		} finally {
 			this.close();
-			//System.out.println("Connection closed!");
-		}
+ 		}
 	}
 	
 	public void delete(String sql){
 		try {
 			this.getConn();
 			sm = connection.createStatement();
-			//System.out.println("Connection created!");
-			
-			
-			//System.out.println(sql);
-			//System.out.println(sm.getClass());
+			 
 			if(sm.executeUpdate(sql)>0){
 				JOptionPane.showMessageDialog(null,"Deletion Compelted!","Message", JOptionPane.PLAIN_MESSAGE);
 			}
 			
 			connection.commit();
 			
-			//connection.setAutoCommit(true);
-			//System.out.println("insertion completed!");
+		 
 		} catch (Exception e) {
 			try{
 				connection.rollback();
@@ -142,27 +118,21 @@ public class ConnectionDB {
 			JOptionPane.showMessageDialog(null,"Deletion Failed","Message", JOptionPane.PLAIN_MESSAGE);
 		} finally {
 			this.close();
-			//System.out.println("Connection closed!");
-		}
+ 		}
 	}
 	
 	public void update(String sql){
 		try {
 			this.getConn();
 			sm = connection.createStatement();
-			//System.out.println("Connection created!");
-			
-			
-			//System.out.println(sql);
-			//System.out.println(sm.getClass());
+			 
 			if(sm.executeUpdate(sql)>0){
 				JOptionPane.showMessageDialog(null,"Update Compelted!","Message", JOptionPane.PLAIN_MESSAGE);
 			}
 			
 			connection.commit();
 			
-			//connection.setAutoCommit(true);
-			//System.out.println("insertion completed!");
+			 
 		} catch (Exception e) {
 			try{
 				connection.rollback();
@@ -173,8 +143,7 @@ public class ConnectionDB {
 			JOptionPane.showMessageDialog(null,"Update Failed","Message", JOptionPane.PLAIN_MESSAGE);
 		} finally {
 			this.close();
-			//System.out.println("Connection closed!");
-		}
+ 		}
 	}	
 	//return the total number of the records in the resultSet
 	public int search(String sql){
@@ -212,7 +181,7 @@ public class ConnectionDB {
 				this.close();
 				
 			} catch (Exception e) {
-				e.printStackTrace();// 打印异常，以便修改
+				e.printStackTrace();// 
 			}
 			
 			
@@ -237,7 +206,7 @@ public class ConnectionDB {
 				connection = null;
 			}
 		} catch (Exception e) {
-			e.printStackTrace();// 打印异常，以便修改
+			e.printStackTrace();// 
 		}
 	}
 
