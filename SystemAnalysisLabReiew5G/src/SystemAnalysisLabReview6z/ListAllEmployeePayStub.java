@@ -1,4 +1,4 @@
-package SystemAnalysisLabReiew6G;
+package SystemAnalysisLabReview6z;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;

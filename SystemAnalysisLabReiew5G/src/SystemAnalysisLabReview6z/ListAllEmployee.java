@@ -1,4 +1,4 @@
-package SystemAnalysisLabReiew6G;
+package SystemAnalysisLabReview6z;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -21,7 +21,7 @@ import javax.swing.GroupLayout.Alignment;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 
-public class ListAllEmployeePayStub extends JFrame {
+public class ListAllEmployee extends JFrame {
 
 	private JPanel contentPane;
 	static JTextArea textArea = new JTextArea();
@@ -33,7 +33,7 @@ public class ListAllEmployeePayStub extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					 ListAllEmployeePayStub frame = new ListAllEmployeePayStub();
+					 ListAllEmployee frame = new ListAllEmployee();
 					 frame.setVisible(true);
 					
 					//home:
@@ -52,7 +52,7 @@ public class ListAllEmployeePayStub extends JFrame {
 	 * @throws IOException 
 	 * @throws FileNotFoundException 
 	 */
-	public ListAllEmployeePayStub() throws FileNotFoundException, IOException {
+	public ListAllEmployee() throws FileNotFoundException, IOException {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 599, 524);
 		contentPane = new JPanel();
@@ -141,7 +141,7 @@ public class ListAllEmployeePayStub extends JFrame {
 			s.executeUpdate(query2);*/
 
 			// Begin testing more:
-			ResultSet rs = s.executeQuery("select * from emppaydetails");
+			ResultSet rs = s.executeQuery("select * from EMPLOYEEINFO");
 			/*rs.next();
 			
 			System.out.println(rs.getInt(1));
