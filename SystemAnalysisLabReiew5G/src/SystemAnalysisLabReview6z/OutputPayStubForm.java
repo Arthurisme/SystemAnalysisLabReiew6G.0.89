@@ -60,13 +60,7 @@ public class OutputPayStubForm extends JFrame implements
     private String sql="",temp;
 
     public OutputPayStubForm(){
-//        double d5=19.00;
-//        System.out.println(String.format("%.2f",d5));
-//        BigDecimal a = new BigDecimal(19.5001);
-//        double t1=a.setScale(2,BigDecimal.ROUND_HALF_UP).doubleValue();
-//        System.out.println("a.setScale(2,2)=" + a.setScale(2,BigDecimal.ROUND_HALF_UP).doubleValue());
-//        java.text.DecimalFormat myformat=new java.text.DecimalFormat("0.00");
-//        System.out.println("a.setScale(2,2)=" + myformat.format(t1));
+ 
     	EmployeeIdL = new JLabel("Enter Employee's ID: ",SwingConstants.RIGHT);
     	EmployeeIdL.setBounds(0, 0, 177, 24);
     	EmployeeFirstNameL = new JLabel("Enter Employee's First Name: ",SwingConstants.RIGHT);
@@ -224,19 +218,7 @@ public class OutputPayStubForm extends JFrame implements
 
     public void actionPerformed(ActionEvent e) {
         if(e.getActionCommand().equals("OutputPayStub")){
-/*            JOptionPane.showMessageDialog(null, "===========================================================\n" +
-                    "|      The Total Earning is " +decimal2Places_format.format(salary.get_TotalIncome())  + "$|\n" +
-                    "|      The Fed_Tax Deduction is " + decimal2Places_format.format(salary.get_FedTaxDeduction()) + "$|\n" +
-                    "|      The Prv_Tax Deduction is " + decimal2Places_format.format(salary.get_ProvicalTaxDeduction()) + "$|\n" +
-                    "|      The QP_Ins Deduction is " + decimal2Places_format.format(salary.get_QpipDeduction()) + "$|\n" +
-                    "|      The E_Ins deduction is " + decimal2Places_format.format(salary.get_EI_Deduction()) + "$|\n" +
-                    "|      The Qpp deduction is " + decimal2Places_format.format(salary.get_QppDeduction()) + "$|\n" +
-                    "|      The Union_d deduction is " + decimal2Places_format.format(salary.get_UnionFee_Deduction()) + "$|\n" +
-                    "|      The Total deduction is " + decimal2Places_format.format(salary.get_TotalDeduction()) + "$|\n" +
-                    "\n" +
-                    "|      The Total Net Amount is " + decimal2Places_format.format(salary.get_NetIncome()) + "$\n" +
-                    "===========================================================\n",
-                    "OutputPayStub", JOptionPane.PLAIN_MESSAGE);*/
+
         	temp="===========================================================\n";
         	ArrayList<ItemsPay> deductionList=salary.getDeductionList();
         	for(int i=0;i<deductionList.size();i++){
