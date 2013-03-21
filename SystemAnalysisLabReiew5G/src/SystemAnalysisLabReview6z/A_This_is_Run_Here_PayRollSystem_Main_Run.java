@@ -381,6 +381,28 @@ public class A_This_is_Run_Here_PayRollSystem_Main_Run extends JFrame implements
         	}
         });
         OutputDataM.add(mntmNewMenuItem);
+        
+        JMenuItem mntmNewMenuItem_1 = new JMenuItem("listAllEmployeSalary");
+        mntmNewMenuItem_1.addMouseListener(new MouseAdapter() {
+        	@Override
+        	public void mousePressed(MouseEvent e) {
+        		
+        		
+        		ListAllEmployeeSalays theListAllEmployeeSalays;
+				try {
+					theListAllEmployeeSalays = new ListAllEmployeeSalays();
+					theListAllEmployeeSalays.setVisible(true);
+				} catch (FileNotFoundException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+        		
+        	}
+        });
+        OutputDataM.add(mntmNewMenuItem_1);
 
     }
 

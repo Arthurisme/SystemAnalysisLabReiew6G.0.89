@@ -143,7 +143,7 @@ public class ListAllEmployeeSalays extends JFrame {
 
 			// Begin testing more:
 			ResultSet rs = s.executeQuery("select * from emppaydetails");
-		 	 ResultSet rsEheader = sH.executeQuery("select * from EMPLOYEEINFO");
+		 	 
 
 		//	EMPLOYEEINFO
 			/*rs.next();
@@ -158,11 +158,35 @@ public class ListAllEmployeeSalays extends JFrame {
 		 	/* for
 		 	every 8 lines of employee deatiats
 		 	a line of employee info*/
+		 	 
+		 	 int i3=0;
 			while(rs.next())
 			{
 				
+				String xxx=rs.getString(1);
 				
-				String tryempid=rs.getString(1);
+				ResultSet rsEheader = sH.executeQuery("select * from EMPLOYEEINFO where emp_id="+(xxx));
+				
+				if(i3%8==0)
+				{
+					rsEheader.next();
+					
+					
+					for(int i=1;i<9;i++)
+					{
+						//test
+						System.out.print(rsEheader.getString(i));	
+						System.out.print("	");
+						
+						textArea.append(rsEheader.getString(i));
+						textArea.append("	");
+						}
+					textArea.append(rsEheader.getString(1));
+					textArea.append("\n");
+				}
+				i3++;
+				
+				//String tryempid=rs.getString(1);
 				
 				
 				  
