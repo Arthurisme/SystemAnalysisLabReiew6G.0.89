@@ -4,7 +4,7 @@ package SystemAnalysisLabReview6z;
  * and open the template in the editor.
  */
 
-
+// lab 6 completed
 
 import java.awt.Container;
 import java.awt.GridLayout;
